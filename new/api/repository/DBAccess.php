@@ -1,6 +1,6 @@
 <?php
 
-require_once "DBIO.php";
+require_once __DIR__ . "/DBIO.php";
 
 class DBAccess
 {

@@ -6,7 +6,7 @@ require_once __DIR__ . "/../middleware/Middleware.php";
 // Controllers
 require_once __DIR__ . "/UsersEventsController.php";
 require_once __DIR__ . "/BackupDBController.php";
-require_once __DIR__ . "UsersController.php";
+require_once __DIR__ . "/UsersController.php";
 
 function Router($requestUrl = null){
     CorsMiddleware::handle();

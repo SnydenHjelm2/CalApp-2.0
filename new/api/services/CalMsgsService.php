@@ -87,7 +87,7 @@ class CalendarsMSGService
             "date" => $date,
             "time" => $time,
             "content" => $content,
-            "hasChanged" => false
+            "hasChanged" => 0
         ];
 
         $dbCalMsg = new DBAccess("cal_msgs");
@@ -120,7 +120,7 @@ class CalendarsMSGService
                 if($currItem["senderId"] != $userId){
                     throw new Exception("Forbidden");
                 }
-                $changes = ["content" => $content, "hasChanged" => true];
+                $changes = ["content" => $content, "hasChanged" => 1];
 
                 // Updated item
                 return $db->patchData($currItem["id"], $changes);

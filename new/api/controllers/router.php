@@ -6,6 +6,7 @@ require_once __DIR__ . "/../middleware/Middleware.php";
 // Controllers
 require_once __DIR__ . "/UsersEventsController.php";
 require_once __DIR__ . "/BackupDBController.php";
+require_once __DIR__ . "UsersController.php";
 
 function Router($requestUrl = null){
     CorsMiddleware::handle();
@@ -36,11 +37,11 @@ function Router($requestUrl = null){
             BackupDBController::handle($method, $input);
             break;
 
-        case "cal_msgs":
+        case "calendars":
             
             break;
 
-        case "calendars":
+        case "cal_msgs":
 
             break;
 
@@ -53,7 +54,7 @@ function Router($requestUrl = null){
             break;
 
         case "users":
-
+            UsersController::handle($method, $input);
             break;
 
         case "users_calendars":

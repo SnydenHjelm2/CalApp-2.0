@@ -5,6 +5,7 @@ require_once __DIR__ . "/UsersCalendarsService.php";
 
 class CalendarsService{
 
+    //Returnera bara tom array om inga finns
     public static function calendarsGetAll(){
         $db = new DBAccess("calendars");
         $calendarTable = $db->getAll();

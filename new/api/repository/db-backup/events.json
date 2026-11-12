@@ -1,0 +1,2254 @@
+{
+    "events": [
+        {
+            "id": "6900000000010",
+            "name": "Creator Portfolio Review",
+            "description": "Members share selected work and exchange constructive feedback.",
+            "date": "2026-11-15",
+            "time": "09:45",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4d2",
+            "tags": ""
+        },
+        {
+            "id": "6900000000069",
+            "name": "Game Jam Kickoff",
+            "description": "Introduce a creative theme and form small teams for a short game-making challenge.",
+            "date": "2026-11-16",
+            "time": "14:00",
+            "location": "Co-working Space - Room A",
+            "calId": "673a1f8b2c4d8",
+            "tags": ""
+        },
+        {
+            "id": "6900000000036",
+            "name": "Robotics and Sensors Session",
+            "description": "Explore practical applications of robotics, sensing, and embedded systems.",
+            "date": "2026-11-16",
+            "time": "15:15",
+            "location": "Innovation Hub",
+            "calId": "673a1f8b2c4d4",
+            "tags": ""
+        },
+        {
+            "id": "69000000000d8",
+            "name": "Intergenerational Conversation",
+            "description": "Create space for people of different generations to exchange experiences.",
+            "date": "2026-11-16",
+            "time": "19:45",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4df",
+            "tags": ""
+        },
+        {
+            "id": "6900000000051",
+            "name": "Negotiation Skills Workshop",
+            "description": "Practice preparing for negotiations and finding mutually beneficial outcomes.",
+            "date": "2026-11-17",
+            "time": "10:00",
+            "location": "University Seminar Room",
+            "calId": "673a1f8b2c4d6",
+            "tags": ""
+        },
+        {
+            "id": "690000000005e",
+            "name": "Sustainable Food Systems Talk",
+            "description": "Discuss food waste, seasonal sourcing, and resilient local food systems.",
+            "date": "2026-11-17",
+            "time": "14:00",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4d7",
+            "tags": ""
+        },
+        {
+            "id": "6900000000055",
+            "name": "Partnership Building Meetup",
+            "description": "Explore how startups can identify and develop useful strategic partnerships.",
+            "date": "2026-11-17",
+            "time": "15:30",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4d6",
+            "tags": ""
+        },
+        {
+            "id": "6900000000084",
+            "name": "Campus Community Social",
+            "description": "Meet fellow students and discover shared interests and activities.",
+            "date": "2026-11-18",
+            "time": "10:45",
+            "location": "Riverside Conference Room",
+            "calId": "673a1f8b2c4d9",
+            "tags": ""
+        },
+        {
+            "id": "6900000000052",
+            "name": "Startup Metrics Clinic",
+            "description": "Discuss meaningful metrics for product adoption, retention, and financial health.",
+            "date": "2026-11-20",
+            "time": "13:30",
+            "location": "Makerspace - Main Hall",
+            "calId": "673a1f8b2c4d6",
+            "tags": ""
+        },
+        {
+            "id": "690000000008c",
+            "name": "Conflict Resolution Workshop",
+            "description": "Explore constructive ways to address disagreement within teams.",
+            "date": "2026-11-21",
+            "time": "09:00",
+            "location": "Creative Studio",
+            "calId": "673a1f8b2c4da",
+            "tags": ""
+        },
+        {
+            "id": "6900000000086",
+            "name": "Semester Reflection Forum",
+            "description": "Reflect on learning experiences and suggest ideas for the next term.",
+            "date": "2026-11-21",
+            "time": "18:15",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4d9",
+            "tags": ""
+        },
+        {
+            "id": "69000000000a9",
+            "name": "Phishing Awareness Lab",
+            "description": "Examine example messages and identify common social engineering signals.",
+            "date": "2026-11-21",
+            "time": "20:00",
+            "location": "University Seminar Room",
+            "calId": "673a1f8b2c4dc",
+            "tags": ""
+        },
+        {
+            "id": "6900000000067",
+            "name": "Local Climate Solutions Showcase",
+            "description": "Members present practical initiatives and projects from their communities.",
+            "date": "2026-11-22",
+            "time": "13:15",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4d7",
+            "tags": ""
+        },
+        {
+            "id": "6900000000048",
+            "name": "Winter Light Photo Walk",
+            "description": "Explore soft seasonal light and make a series of atmospheric photographs.",
+            "date": "2026-11-23",
+            "time": "08:30",
+            "location": "Town Hall - Assembly Room",
+            "calId": "673a1f8b2c4d5",
+            "tags": ""
+        },
+        {
+            "id": "6900000000064",
+            "name": "Native Planting Morning",
+            "description": "Take part in a planting activity focused on locally appropriate species.",
+            "date": "2026-11-23",
+            "time": "11:30",
+            "location": "Arts Workshop Studio",
+            "calId": "673a1f8b2c4d7",
+            "tags": ""
+        },
+        {
+            "id": "690000000008a",
+            "name": "Team Culture Roundtable",
+            "description": "Share approaches to building trust, accountability, and healthy team norms.",
+            "date": "2026-11-24",
+            "time": "11:00",
+            "location": "Co-working Space - Room A",
+            "calId": "673a1f8b2c4da",
+            "tags": ""
+        },
+        {
+            "id": "6900000000089",
+            "name": "Decision-Making Under Uncertainty",
+            "description": "Explore frameworks for making sound decisions with incomplete information.",
+            "date": "2026-11-25",
+            "time": "10:15",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4da",
+            "tags": ""
+        },
+        {
+            "id": "69000000000c5",
+            "name": "Reproducibility Roundtable",
+            "description": "Discuss transparent methods, data availability, and reproducible workflows.",
+            "date": "2026-11-25",
+            "time": "18:00",
+            "location": "Co-working Space - Room A",
+            "calId": "673a1f8b2c4de",
+            "tags": ""
+        },
+        {
+            "id": "690000000001d",
+            "name": "Next Season Brainstorm",
+            "description": "Collect ideas for future themes, collaborations, and community activities.",
+            "date": "2026-11-26",
+            "time": "10:45",
+            "location": "Central Library - Meeting Room 2",
+            "calId": "673a1f8b2c4d2",
+            "tags": ""
+        },
+        {
+            "id": "6900000000065",
+            "name": "Environmental Film Discussion",
+            "description": "Watch and discuss a documentary about conservation or climate solutions.",
+            "date": "2026-11-26",
+            "time": "15:00",
+            "location": "Community Hall",
+            "calId": "673a1f8b2c4d7",
+            "tags": ""
+        },
+        {
+            "id": "690000000006d",
+            "name": "Indie Dev Playtest",
+            "description": "Play members' prototypes and provide focused usability feedback.",
+            "date": "2026-11-27",
+            "time": "08:15",
+            "location": "Town Hall - Assembly Room",
+            "calId": "673a1f8b2c4d8",
+            "tags": ""
+        },
+        {
+            "id": "690000000000a",
+            "name": "Testing Practices Clinic",
+            "description": "Share practical approaches to automated tests, test coverage, and reliable builds.",
+            "date": "2026-11-27",
+            "time": "08:30",
+            "location": "Harbor Meeting House",
+            "calId": "673a1f8b2c4d1",
+            "tags": ""
+        },
+        {
+            "id": "690000000003f",
+            "name": "Landscape Composition Meetup",
+            "description": "Discuss foreground, framing, and visual balance in outdoor photography.",
+            "date": "2026-11-27",
+            "time": "13:00",
+            "location": "Riverside Conference Room",
+            "calId": "673a1f8b2c4d5",
+            "tags": ""
+        },
+        {
+            "id": "6900000000082",
+            "name": "Scholarship Information Session",
+            "description": "Discuss how to find funding opportunities and prepare applications.",
+            "date": "2026-11-27",
+            "time": "14:00",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4d9",
+            "tags": ""
+        },
+        {
+            "id": "6900000000034",
+            "name": "Developer Experience Meetup",
+            "description": "Discuss tools and practices that make software teams more productive.",
+            "date": "2026-11-28",
+            "time": "15:00",
+            "location": "Innovation Hub",
+            "calId": "673a1f8b2c4d4",
+            "tags": ""
+        },
+        {
+            "id": "69000000000ba",
+            "name": "Zine Making Meetup",
+            "description": "Create a small publication using writing, illustration, and found imagery.",
+            "date": "2026-11-28",
+            "time": "20:00",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4dd",
+            "tags": ""
+        },
+        {
+            "id": "6900000000047",
+            "name": "Travel Photography Showcase",
+            "description": "Share travel images and discuss how to build a visual narrative.",
+            "date": "2026-11-29",
+            "time": "19:00",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4d5",
+            "tags": ""
+        },
+        {
+            "id": "6900000000015",
+            "name": "Creative Collaboration Mixer",
+            "description": "Meet potential collaborators and pitch small cross-discipline projects.",
+            "date": "2026-12-01",
+            "time": "14:00",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4d2",
+            "tags": ""
+        },
+        {
+            "id": "690000000006a",
+            "name": "Gameplay Mechanics Workshop",
+            "description": "Prototype simple mechanics and discuss what makes interactions satisfying.",
+            "date": "2026-12-06",
+            "time": "16:30",
+            "location": "University Seminar Room",
+            "calId": "673a1f8b2c4d8",
+            "tags": ""
+        },
+        {
+            "id": "690000000009a",
+            "name": "City Photography Challenge",
+            "description": "Create a small photo series focused on patterns and details in the city.",
+            "date": "2026-12-06",
+            "time": "18:45",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4db",
+            "tags": ""
+        },
+        {
+            "id": "69000000000bd",
+            "name": "Open Mic Gathering",
+            "description": "Share poetry, music, storytelling, or short performance pieces.",
+            "date": "2026-12-06",
+            "time": "20:00",
+            "location": "Creative Studio",
+            "calId": "673a1f8b2c4dd",
+            "tags": ""
+        },
+        {
+            "id": "6900000000006",
+            "name": "Accessibility Review Session",
+            "description": "Review project interfaces and documentation for accessibility improvements.",
+            "date": "2026-12-08",
+            "time": "16:00",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4d1",
+            "tags": ""
+        },
+        {
+            "id": "69000000000cf",
+            "name": "Research Presentation Practice",
+            "description": "Rehearse short presentations and receive feedback on clarity and structure.",
+            "date": "2026-12-08",
+            "time": "19:30",
+            "location": "Arts Workshop Studio",
+            "calId": "673a1f8b2c4de",
+            "tags": ""
+        },
+        {
+            "id": "690000000009b",
+            "name": "Transit and Mobility Walk",
+            "description": "Observe connections between public transport, walking, and cycling routes.",
+            "date": "2026-12-09",
+            "time": "12:30",
+            "location": "Makerspace - Main Hall",
+            "calId": "673a1f8b2c4db",
+            "tags": ""
+        },
+        {
+            "id": "690000000003b",
+            "name": "Innovation Roadmap Workshop",
+            "description": "Identify promising themes and outline experiments for the coming quarter.",
+            "date": "2026-12-09",
+            "time": "15:00",
+            "location": "Innovation Hub",
+            "calId": "673a1f8b2c4d4",
+            "tags": ""
+        },
+        {
+            "id": "6900000000018",
+            "name": "Creator Tools Roundtable",
+            "description": "Discuss software, equipment, and workflows used in everyday creative work.",
+            "date": "2026-12-10",
+            "time": "09:45",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4d2",
+            "tags": ""
+        },
+        {
+            "id": "690000000008b",
+            "name": "Executive Communication Clinic",
+            "description": "Practice concise communication for complex organizational topics.",
+            "date": "2026-12-11",
+            "time": "09:00",
+            "location": "Online",
+            "calId": "673a1f8b2c4da",
+            "tags": ""
+        },
+        {
+            "id": "690000000004f",
+            "name": "Go-to-Market Strategy Lab",
+            "description": "Map target customers, positioning, channels, and early launch experiments.",
+            "date": "2026-12-11",
+            "time": "19:00",
+            "location": "Harbor Meeting House",
+            "calId": "673a1f8b2c4d6",
+            "tags": ""
+        },
+        {
+            "id": "6900000000008",
+            "name": "Bug Bash",
+            "description": "A focused testing session to reproduce issues and help prioritize fixes.",
+            "date": "2026-12-12",
+            "time": "17:15",
+            "location": "Town Hall - Assembly Room",
+            "calId": "673a1f8b2c4d1",
+            "tags": ""
+        },
+        {
+            "id": "69000000000db",
+            "name": "Mutual Aid Discussion",
+            "description": "Explore practical ways neighbors can support one another.",
+            "date": "2026-12-14",
+            "time": "12:00",
+            "location": "Central Library - Meeting Room 2",
+            "calId": "673a1f8b2c4df",
+            "tags": ""
+        },
+        {
+            "id": "6900000000059",
+            "name": "Quarterly Founder Roundup",
+            "description": "Review progress, share milestones, and set priorities for the next quarter.",
+            "date": "2026-12-14",
+            "time": "13:15",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4d6",
+            "tags": ""
+        },
+        {
+            "id": "6900000000002",
+            "name": "Open Source Onboarding",
+            "description": "An introduction to the group's repositories, contribution guidelines, and review workflow.",
+            "date": "2026-12-14",
+            "time": "20:00",
+            "location": "University Seminar Room",
+            "calId": "673a1f8b2c4d1",
+            "tags": ""
+        },
+        {
+            "id": "6900000000007",
+            "name": "License and Compliance Q&A",
+            "description": "Discuss common licensing questions and responsible reuse of software.",
+            "date": "2026-12-15",
+            "time": "13:45",
+            "location": "Community Hall",
+            "calId": "673a1f8b2c4d1",
+            "tags": ""
+        },
+        {
+            "id": "690000000008e",
+            "name": "Organizational Design Discussion",
+            "description": "Compare structures and operating models for different kinds of teams.",
+            "date": "2026-12-16",
+            "time": "11:00",
+            "location": "Harbor Meeting House",
+            "calId": "673a1f8b2c4da",
+            "tags": ""
+        },
+        {
+            "id": "6900000000016",
+            "name": "Editing Workflow Clinic",
+            "description": "Share practical editing methods and ways to organize creative assets.",
+            "date": "2026-12-18",
+            "time": "11:30",
+            "location": "Harbor Meeting House",
+            "calId": "673a1f8b2c4d2",
+            "tags": ""
+        },
+        {
+            "id": "6900000000090",
+            "name": "Delegation and Empowerment",
+            "description": "Explore how to distribute responsibility while maintaining clarity.",
+            "date": "2026-12-19",
+            "time": "20:00",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4da",
+            "tags": ""
+        },
+        {
+            "id": "690000000007a",
+            "name": "International Student Meetup",
+            "description": "Connect students across countries and exchange campus experiences.",
+            "date": "2026-12-20",
+            "time": "17:00",
+            "location": "Central Library - Meeting Room 2",
+            "calId": "673a1f8b2c4d9",
+            "tags": ""
+        },
+        {
+            "id": "690000000001b",
+            "name": "Creative Feedback Circle",
+            "description": "Give and receive thoughtful feedback in a supportive group setting.",
+            "date": "2026-12-21",
+            "time": "14:00",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4d2",
+            "tags": ""
+        },
+        {
+            "id": "6900000000019",
+            "name": "Typography and Layout Session",
+            "description": "Study type choices, hierarchy, and readable page composition.",
+            "date": "2026-12-22",
+            "time": "08:00",
+            "location": "Arts Workshop Studio",
+            "calId": "673a1f8b2c4d2",
+            "tags": ""
+        },
+        {
+            "id": "6900000000057",
+            "name": "Pricing Strategy Workshop",
+            "description": "Compare pricing models and ways to test willingness to pay.",
+            "date": "2026-12-27",
+            "time": "10:30",
+            "location": "Harbor Meeting House",
+            "calId": "673a1f8b2c4d6",
+            "tags": ""
+        },
+        {
+            "id": "6900000000017",
+            "name": "Design Challenge Night",
+            "description": "Create a piece in response to a surprise prompt within a limited time.",
+            "date": "2026-12-29",
+            "time": "16:00",
+            "location": "Harbor Meeting House",
+            "calId": "673a1f8b2c4d2",
+            "tags": ""
+        },
+        {
+            "id": "69000000000d6",
+            "name": "Community Garden Planning",
+            "description": "Discuss planting plans, shared responsibilities, and seasonal activities.",
+            "date": "2027-01-01",
+            "time": "16:00",
+            "location": "Makerspace - Main Hall",
+            "calId": "673a1f8b2c4df",
+            "tags": ""
+        },
+        {
+            "id": "690000000008d",
+            "name": "Coaching Skills Session",
+            "description": "Practice asking useful questions and supporting professional growth.",
+            "date": "2027-01-02",
+            "time": "13:00",
+            "location": "Creative Studio",
+            "calId": "673a1f8b2c4da",
+            "tags": ""
+        },
+        {
+            "id": "690000000005c",
+            "name": "Urban Biodiversity Walk",
+            "description": "Observe local habitats and identify opportunities to support urban wildlife.",
+            "date": "2027-01-02",
+            "time": "14:15",
+            "location": "Central Library - Meeting Room 2",
+            "calId": "673a1f8b2c4d7",
+            "tags": ""
+        },
+        {
+            "id": "6900000000009",
+            "name": "Project Showcase",
+            "description": "Contributors present recent work and explain the problems their projects aim to solve.",
+            "date": "2027-01-02",
+            "time": "14:30",
+            "location": "Riverside Conference Room",
+            "calId": "673a1f8b2c4d1",
+            "tags": ""
+        },
+        {
+            "id": "69000000000c4",
+            "name": "Literature Review Workshop",
+            "description": "Share methods for searching, organizing, and synthesizing academic sources.",
+            "date": "2027-01-03",
+            "time": "17:15",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4de",
+            "tags": ""
+        },
+        {
+            "id": "6900000000004",
+            "name": "Release Planning Meetup",
+            "description": "Plan upcoming milestones, review open pull requests, and coordinate release responsibilities.",
+            "date": "2027-01-07",
+            "time": "11:30",
+            "location": "University Seminar Room",
+            "calId": "673a1f8b2c4d1",
+            "tags": ""
+        },
+        {
+            "id": "6900000000000",
+            "name": "Community Code Sprint",
+            "description": "A collaborative session to tackle beginner-friendly issues and improve shared projects.",
+            "date": "2027-01-07",
+            "time": "20:45",
+            "location": "Online",
+            "calId": "673a1f8b2c4d1",
+            "tags": ""
+        },
+        {
+            "id": "6900000000077",
+            "name": "Game Jam Showcase",
+            "description": "Play completed jam projects and celebrate the teams' creative solutions.",
+            "date": "2027-01-08",
+            "time": "19:45",
+            "location": "Town Hall - Assembly Room",
+            "calId": "673a1f8b2c4d8",
+            "tags": ""
+        },
+        {
+            "id": "69000000000a2",
+            "name": "Nighttime City Walk",
+            "description": "Observe lighting, movement, and the atmosphere of urban spaces after dark.",
+            "date": "2027-01-09",
+            "time": "08:00",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4db",
+            "tags": ""
+        },
+        {
+            "id": "690000000005f",
+            "name": "Climate Action Planning",
+            "description": "Turn broad environmental goals into practical community-level actions.",
+            "date": "2027-01-10",
+            "time": "11:15",
+            "location": "Online",
+            "calId": "673a1f8b2c4d7",
+            "tags": ""
+        },
+        {
+            "id": "69000000000b4",
+            "name": "Collaborative Mural Planning",
+            "description": "Develop concepts and a shared visual direction for a collaborative mural.",
+            "date": "2027-01-10",
+            "time": "19:45",
+            "location": "Creative Studio",
+            "calId": "673a1f8b2c4dd",
+            "tags": ""
+        },
+        {
+            "id": "69000000000dd",
+            "name": "Inclusive Events Workshop",
+            "description": "Discuss how to make gatherings welcoming and accessible to more people.",
+            "date": "2027-01-10",
+            "time": "20:00",
+            "location": "Town Hall - Assembly Room",
+            "calId": "673a1f8b2c4df",
+            "tags": ""
+        },
+        {
+            "id": "690000000001c",
+            "name": "Digital Art Exhibition",
+            "description": "Showcase member artwork in a shared online gallery.",
+            "date": "2027-01-11",
+            "time": "11:45",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4d2",
+            "tags": ""
+        },
+        {
+            "id": "69000000000ad",
+            "name": "Network Defense Workshop",
+            "description": "Review network segmentation, monitoring, and defensive controls.",
+            "date": "2027-01-12",
+            "time": "10:45",
+            "location": "Town Hall - Assembly Room",
+            "calId": "673a1f8b2c4dc",
+            "tags": ""
+        },
+        {
+            "id": "6900000000041",
+            "name": "Long Exposure Practice",
+            "description": "Explore motion blur and long-exposure techniques in a guided session.",
+            "date": "2027-01-12",
+            "time": "13:30",
+            "location": "University Seminar Room",
+            "calId": "673a1f8b2c4d5",
+            "tags": ""
+        },
+        {
+            "id": "6900000000046",
+            "name": "Camera Settings Clinic",
+            "description": "Review exposure settings and solve common shooting problems together.",
+            "date": "2027-01-13",
+            "time": "14:15",
+            "location": "Co-working Space - Room A",
+            "calId": "673a1f8b2c4d5",
+            "tags": ""
+        },
+        {
+            "id": "6900000000033",
+            "name": "Automation Ideas Exchange",
+            "description": "Share repetitive workflows that could benefit from thoughtful automation.",
+            "date": "2027-01-13",
+            "time": "14:45",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4d4",
+            "tags": ""
+        },
+        {
+            "id": "690000000008f",
+            "name": "Measuring What Matters",
+            "description": "Discuss meaningful indicators for strategy execution and team performance.",
+            "date": "2027-01-14",
+            "time": "09:00",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4da",
+            "tags": ""
+        },
+        {
+            "id": "690000000003e",
+            "name": "Portrait Lighting Workshop",
+            "description": "Experiment with simple lighting setups and expressive portrait techniques.",
+            "date": "2027-01-15",
+            "time": "09:45",
+            "location": "Innovation Hub",
+            "calId": "673a1f8b2c4d5",
+            "tags": ""
+        },
+        {
+            "id": "69000000000ab",
+            "name": "Passwordless Authentication Talk",
+            "description": "Explore modern authentication approaches and their trade-offs.",
+            "date": "2027-01-15",
+            "time": "10:15",
+            "location": "Co-working Space - Room A",
+            "calId": "673a1f8b2c4dc",
+            "tags": ""
+        },
+        {
+            "id": "6900000000011",
+            "name": "Digital Illustration Jam",
+            "description": "A relaxed creative session built around a shared illustration prompt.",
+            "date": "2027-01-15",
+            "time": "17:30",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4d2",
+            "tags": ""
+        },
+        {
+            "id": "6900000000054",
+            "name": "Legal Basics for Founders",
+            "description": "Review common early-stage legal topics and questions to raise with professionals.",
+            "date": "2027-01-15",
+            "time": "18:00",
+            "location": "Online",
+            "calId": "673a1f8b2c4d6",
+            "tags": ""
+        },
+        {
+            "id": "6900000000097",
+            "name": "Urban Sketching Meetup",
+            "description": "Capture streetscapes and public spaces through quick observational sketches.",
+            "date": "2027-01-16",
+            "time": "14:30",
+            "location": "Community Hall",
+            "calId": "673a1f8b2c4db",
+            "tags": ""
+        },
+        {
+            "id": "69000000000a0",
+            "name": "Local History Meetup",
+            "description": "Share research and stories about places that shaped the local area.",
+            "date": "2027-01-17",
+            "time": "09:00",
+            "location": "Creative Studio",
+            "calId": "673a1f8b2c4db",
+            "tags": ""
+        },
+        {
+            "id": "69000000000ca",
+            "name": "Interdisciplinary Research Meetup",
+            "description": "Explore opportunities to connect methods and ideas across fields.",
+            "date": "2027-01-17",
+            "time": "16:00",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4de",
+            "tags": ""
+        },
+        {
+            "id": "690000000004a",
+            "name": "Annual Photo Showcase",
+            "description": "Present favorite photographs from the year and celebrate members' progress.",
+            "date": "2027-01-20",
+            "time": "08:00",
+            "location": "Central Library - Meeting Room 2",
+            "calId": "673a1f8b2c4d5",
+            "tags": ""
+        },
+        {
+            "id": "6900000000049",
+            "name": "Printing and Presentation",
+            "description": "Discuss preparing images for print, framing, and exhibition.",
+            "date": "2027-01-20",
+            "time": "09:15",
+            "location": "Harbor Meeting House",
+            "calId": "673a1f8b2c4d5",
+            "tags": ""
+        },
+        {
+            "id": "6900000000066",
+            "name": "Sustainable Design Workshop",
+            "description": "Consider materials, durability, and lifecycle impacts in product design.",
+            "date": "2027-01-21",
+            "time": "12:00",
+            "location": "Online",
+            "calId": "673a1f8b2c4d7",
+            "tags": ""
+        },
+        {
+            "id": "6900000000023",
+            "name": "Short Story Exchange",
+            "description": "Members bring a short story recommendation and explain what made it memorable.",
+            "date": "2027-01-21",
+            "time": "15:15",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4d3",
+            "tags": ""
+        },
+        {
+            "id": "6900000000068",
+            "name": "Future Generations Forum",
+            "description": "Discuss long-term environmental responsibility and intergenerational choices.",
+            "date": "2027-01-21",
+            "time": "16:00",
+            "location": "Town Hall - Assembly Room",
+            "calId": "673a1f8b2c4d7",
+            "tags": ""
+        },
+        {
+            "id": "690000000006b",
+            "name": "Pixel Art Practice",
+            "description": "Create small sprite assets and explore limited-palette techniques.",
+            "date": "2027-01-22",
+            "time": "15:45",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4d8",
+            "tags": ""
+        },
+        {
+            "id": "6900000000085",
+            "name": "Peer Mentoring Meetup",
+            "description": "Pair students to exchange advice about courses and university life.",
+            "date": "2027-01-23",
+            "time": "16:00",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4d9",
+            "tags": ""
+        },
+        {
+            "id": "69000000000d2",
+            "name": "Community Welcome Meetup",
+            "description": "Welcome new members and introduce current projects and ways to participate.",
+            "date": "2027-01-24",
+            "time": "12:00",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4df",
+            "tags": ""
+        },
+        {
+            "id": "6900000000014",
+            "name": "Motion Design Showcase",
+            "description": "Present short animations and discuss the process behind them.",
+            "date": "2027-01-25",
+            "time": "18:00",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4d2",
+            "tags": ""
+        },
+        {
+            "id": "690000000000f",
+            "name": "Visual Storytelling Workshop",
+            "description": "Explore composition, pacing, and visual techniques for communicating ideas.",
+            "date": "2027-01-26",
+            "time": "11:00",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4d2",
+            "tags": ""
+        },
+        {
+            "id": "69000000000ae",
+            "name": "Privacy Engineering Session",
+            "description": "Explore data minimization, privacy-by-design, and practical safeguards.",
+            "date": "2027-01-28",
+            "time": "11:00",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4dc",
+            "tags": ""
+        },
+        {
+            "id": "6900000000058",
+            "name": "Lessons from Failed Experiments",
+            "description": "Discuss experiments that did not work and what the results revealed.",
+            "date": "2027-01-29",
+            "time": "20:30",
+            "location": "Community Hall",
+            "calId": "673a1f8b2c4d6",
+            "tags": ""
+        },
+        {
+            "id": "6900000000094",
+            "name": "Risk and Resilience Planning",
+            "description": "Identify organizational risks and ways to improve resilience.",
+            "date": "2027-01-30",
+            "time": "09:15",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4da",
+            "tags": ""
+        },
+        {
+            "id": "69000000000b0",
+            "name": "Backup and Recovery Planning",
+            "description": "Discuss resilient backup strategies and recovery testing.",
+            "date": "2027-01-31",
+            "time": "14:00",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4dc",
+            "tags": ""
+        },
+        {
+            "id": "690000000009e",
+            "name": "Accessible City Audit",
+            "description": "Identify barriers and opportunities for making public spaces more accessible.",
+            "date": "2027-01-31",
+            "time": "16:45",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4db",
+            "tags": ""
+        },
+        {
+            "id": "690000000001f",
+            "name": "Classic Fiction Reading Group",
+            "description": "Read a selected short work and discuss its themes and historical context.",
+            "date": "2027-02-01",
+            "time": "13:45",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4d3",
+            "tags": ""
+        },
+        {
+            "id": "6900000000096",
+            "name": "Hidden Architecture Walk",
+            "description": "Explore overlooked architectural details and discuss the stories behind them.",
+            "date": "2027-02-02",
+            "time": "12:00",
+            "location": "Riverside Conference Room",
+            "calId": "673a1f8b2c4db",
+            "tags": ""
+        },
+        {
+            "id": "69000000000a7",
+            "name": "Secure Coding Clinic",
+            "description": "Review common application vulnerabilities and safer coding patterns.",
+            "date": "2027-02-03",
+            "time": "19:00",
+            "location": "Online",
+            "calId": "673a1f8b2c4dc",
+            "tags": ""
+        },
+        {
+            "id": "690000000004c",
+            "name": "Customer Discovery Workshop",
+            "description": "Practice interview techniques for understanding customer needs and assumptions.",
+            "date": "2027-02-04",
+            "time": "08:30",
+            "location": "Creative Studio",
+            "calId": "673a1f8b2c4d6",
+            "tags": ""
+        },
+        {
+            "id": "69000000000d1",
+            "name": "Research Showcase",
+            "description": "Present current projects, early findings, and questions for future collaboration.",
+            "date": "2027-02-04",
+            "time": "19:00",
+            "location": "Harbor Meeting House",
+            "calId": "673a1f8b2c4de",
+            "tags": ""
+        },
+        {
+            "id": "6900000000025",
+            "name": "Dystopian Literature Night",
+            "description": "Compare imagined futures and the social questions raised by dystopian fiction.",
+            "date": "2027-02-05",
+            "time": "10:00",
+            "location": "Makerspace - Main Hall",
+            "calId": "673a1f8b2c4d3",
+            "tags": ""
+        },
+        {
+            "id": "69000000000c2",
+            "name": "Collective Showcase Night",
+            "description": "Present recent work and celebrate the range of creative practices in the group.",
+            "date": "2027-02-06",
+            "time": "12:45",
+            "location": "Arts Workshop Studio",
+            "calId": "673a1f8b2c4dd",
+            "tags": ""
+        },
+        {
+            "id": "690000000003c",
+            "name": "Golden Hour Photo Walk",
+            "description": "Practice capturing warm natural light while exploring composition and exposure.",
+            "date": "2027-02-06",
+            "time": "18:15",
+            "location": "Arts Workshop Studio",
+            "calId": "673a1f8b2c4d5",
+            "tags": ""
+        },
+        {
+            "id": "6900000000087",
+            "name": "Leading Through Change",
+            "description": "Discuss communication and decision-making during organizational transitions.",
+            "date": "2027-02-07",
+            "time": "10:00",
+            "location": "Arts Workshop Studio",
+            "calId": "673a1f8b2c4da",
+            "tags": ""
+        },
+        {
+            "id": "69000000000a6",
+            "name": "Incident Response Tabletop",
+            "description": "Walk through a simulated security incident and evaluate response decisions.",
+            "date": "2027-02-07",
+            "time": "13:00",
+            "location": "Riverside Conference Room",
+            "calId": "673a1f8b2c4dc",
+            "tags": ""
+        },
+        {
+            "id": "69000000000b2",
+            "name": "Zero Trust Architecture Discussion",
+            "description": "Explore identity-centered security models and implementation challenges.",
+            "date": "2027-02-07",
+            "time": "17:00",
+            "location": "Arts Workshop Studio",
+            "calId": "673a1f8b2c4dc",
+            "tags": ""
+        },
+        {
+            "id": "690000000001e",
+            "name": "The Meaning of Memory",
+            "description": "An open discussion about memory, identity, and how people construct personal narratives.",
+            "date": "2027-02-10",
+            "time": "14:30",
+            "location": "Makerspace - Main Hall",
+            "calId": "673a1f8b2c4d3",
+            "tags": ""
+        },
+        {
+            "id": "690000000002f",
+            "name": "Future Interfaces Roundtable",
+            "description": "Discuss new interaction patterns for devices, applications, and connected environments.",
+            "date": "2027-02-10",
+            "time": "18:15",
+            "location": "Riverside Conference Room",
+            "calId": "673a1f8b2c4d4",
+            "tags": ""
+        },
+        {
+            "id": "69000000000df",
+            "name": "Small Projects Showcase",
+            "description": "Present completed community projects and lessons learned.",
+            "date": "2027-02-11",
+            "time": "15:15",
+            "location": "Makerspace - Main Hall",
+            "calId": "673a1f8b2c4df",
+            "tags": ""
+        },
+        {
+            "id": "69000000000c7",
+            "name": "Methods Comparison Seminar",
+            "description": "Compare methodological choices and the kinds of questions they can answer.",
+            "date": "2027-02-12",
+            "time": "15:00",
+            "location": "Harbor Meeting House",
+            "calId": "673a1f8b2c4de",
+            "tags": ""
+        },
+        {
+            "id": "6900000000003",
+            "name": "Documentation Workshop",
+            "description": "Members work together to make technical documentation clearer and easier to navigate.",
+            "date": "2027-02-13",
+            "time": "10:30",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4d1",
+            "tags": ""
+        },
+        {
+            "id": "6900000000070",
+            "name": "Unity Workflow Clinic",
+            "description": "Share project organization and practical development workflows.",
+            "date": "2027-02-14",
+            "time": "13:45",
+            "location": "Creative Studio",
+            "calId": "673a1f8b2c4d8",
+            "tags": ""
+        },
+        {
+            "id": "6900000000071",
+            "name": "Unreal Engine Showcase",
+            "description": "Demonstrate prototypes and discuss useful engine features.",
+            "date": "2027-02-14",
+            "time": "14:45",
+            "location": "University Seminar Room",
+            "calId": "673a1f8b2c4d8",
+            "tags": ""
+        },
+        {
+            "id": "6900000000024",
+            "name": "Existentialism Discussion",
+            "description": "An accessible introduction to key existentialist ideas and their modern relevance.",
+            "date": "2027-02-14",
+            "time": "18:15",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4d3",
+            "tags": ""
+        },
+        {
+            "id": "6900000000029",
+            "name": "Logic and Thought Experiments",
+            "description": "Try classic thought experiments and examine the assumptions behind them.",
+            "date": "2027-02-17",
+            "time": "11:30",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4d3",
+            "tags": ""
+        },
+        {
+            "id": "6900000000001",
+            "name": "Maintainer Roundtable",
+            "description": "Project maintainers compare release practices, contributor support, and long-term sustainability.",
+            "date": "2027-02-20",
+            "time": "19:00",
+            "location": "Makerspace - Main Hall",
+            "calId": "673a1f8b2c4d1",
+            "tags": ""
+        },
+        {
+            "id": "6900000000073",
+            "name": "Procedural Generation Lab",
+            "description": "Experiment with rules and systems for generating game content.",
+            "date": "2027-02-22",
+            "time": "11:00",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4d8",
+            "tags": ""
+        },
+        {
+            "id": "6900000000061",
+            "name": "Green Transport Roundtable",
+            "description": "Compare walking, cycling, public transport, and shared mobility options.",
+            "date": "2027-02-24",
+            "time": "13:00",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4d7",
+            "tags": ""
+        },
+        {
+            "id": "690000000009c",
+            "name": "Urban Planning Discussion",
+            "description": "Discuss density, mixed-use development, and the future of city neighborhoods.",
+            "date": "2027-02-25",
+            "time": "12:30",
+            "location": "Central Library - Meeting Room 2",
+            "calId": "673a1f8b2c4db",
+            "tags": ""
+        },
+        {
+            "id": "69000000000b5",
+            "name": "Creative Writing Circle",
+            "description": "Use a short prompt to create new work and exchange supportive feedback.",
+            "date": "2027-02-25",
+            "time": "12:45",
+            "location": "Community Hall",
+            "calId": "673a1f8b2c4dd",
+            "tags": ""
+        },
+        {
+            "id": "69000000000bc",
+            "name": "Photography and Poetry Pairing",
+            "description": "Combine images and short texts to create small collaborative pieces.",
+            "date": "2027-02-27",
+            "time": "08:00",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4dd",
+            "tags": ""
+        },
+        {
+            "id": "6900000000053",
+            "name": "Product-Market Fit Discussion",
+            "description": "Exchange lessons on testing demand and learning from early users.",
+            "date": "2027-02-28",
+            "time": "10:15",
+            "location": "Community Hall",
+            "calId": "673a1f8b2c4d6",
+            "tags": ""
+        },
+        {
+            "id": "69000000000b9",
+            "name": "Improvisation and Performance",
+            "description": "Try guided exercises that encourage spontaneity and creative confidence.",
+            "date": "2027-02-28",
+            "time": "10:15",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4dd",
+            "tags": ""
+        },
+        {
+            "id": "69000000000da",
+            "name": "Event Planning Roundtable",
+            "description": "Coordinate future gatherings and gather suggestions from members.",
+            "date": "2027-02-28",
+            "time": "15:30",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4df",
+            "tags": ""
+        },
+        {
+            "id": "690000000000c",
+            "name": "First Contribution Hour",
+            "description": "Pair up with experienced contributors and make a first small contribution.",
+            "date": "2027-03-05",
+            "time": "09:00",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4d1",
+            "tags": ""
+        },
+        {
+            "id": "69000000000c3",
+            "name": "Research Question Clinic",
+            "description": "Refine research questions and discuss scope, feasibility, and significance.",
+            "date": "2027-03-05",
+            "time": "13:30",
+            "location": "Town Hall - Assembly Room",
+            "calId": "673a1f8b2c4de",
+            "tags": ""
+        },
+        {
+            "id": "6900000000005",
+            "name": "Developer Tooling Demo",
+            "description": "A show-and-tell of useful tools, scripts, and workflows for open-source development.",
+            "date": "2027-03-06",
+            "time": "08:45",
+            "location": "Riverside Conference Room",
+            "calId": "673a1f8b2c4d1",
+            "tags": ""
+        },
+        {
+            "id": "69000000000d7",
+            "name": "Local Resource Mapping",
+            "description": "Identify useful services, spaces, and support networks in the community.",
+            "date": "2027-03-07",
+            "time": "11:00",
+            "location": "Arts Workshop Studio",
+            "calId": "673a1f8b2c4df",
+            "tags": ""
+        },
+        {
+            "id": "69000000000c6",
+            "name": "Research Data Management",
+            "description": "Explore documentation, storage, sharing, and responsible data handling.",
+            "date": "2027-03-07",
+            "time": "14:00",
+            "location": "Riverside Conference Room",
+            "calId": "673a1f8b2c4de",
+            "tags": ""
+        },
+        {
+            "id": "6900000000032",
+            "name": "Technology Ethics Forum",
+            "description": "Discuss responsible design, privacy, fairness, and unintended consequences.",
+            "date": "2027-03-08",
+            "time": "09:00",
+            "location": "Co-working Space - Room A",
+            "calId": "673a1f8b2c4d4",
+            "tags": ""
+        },
+        {
+            "id": "6900000000095",
+            "name": "Quarterly Leadership Exchange",
+            "description": "Share current leadership challenges and priorities for the coming quarter.",
+            "date": "2027-03-08",
+            "time": "09:15",
+            "location": "Town Hall - Assembly Room",
+            "calId": "673a1f8b2c4da",
+            "tags": ""
+        },
+        {
+            "id": "6900000000074",
+            "name": "Publishing and Marketing Q&A",
+            "description": "Discuss store pages, launch planning, and community-building for indie games.",
+            "date": "2027-03-08",
+            "time": "11:45",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4d8",
+            "tags": ""
+        },
+        {
+            "id": "6900000000088",
+            "name": "Strategic Priorities Workshop",
+            "description": "Translate long-term goals into clear priorities and measurable actions.",
+            "date": "2027-03-10",
+            "time": "15:00",
+            "location": "Makerspace - Main Hall",
+            "calId": "673a1f8b2c4da",
+            "tags": ""
+        },
+        {
+            "id": "6900000000062",
+            "name": "Water Conservation Session",
+            "description": "Discuss practical water-saving measures and watershed protection.",
+            "date": "2027-03-10",
+            "time": "16:00",
+            "location": "Arts Workshop Studio",
+            "calId": "673a1f8b2c4d7",
+            "tags": ""
+        },
+        {
+            "id": "6900000000072",
+            "name": "Game UI Design Session",
+            "description": "Review menus, HUDs, feedback, and accessibility in game interfaces.",
+            "date": "2027-03-10",
+            "time": "17:00",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4d8",
+            "tags": ""
+        },
+        {
+            "id": "69000000000cd",
+            "name": "Early-Career Researcher Exchange",
+            "description": "Share experiences and practical advice about developing a research career.",
+            "date": "2027-03-14",
+            "time": "17:45",
+            "location": "Central Library - Meeting Room 2",
+            "calId": "673a1f8b2c4de",
+            "tags": ""
+        },
+        {
+            "id": "690000000009f",
+            "name": "Rooftop and Skyline Stories",
+            "description": "Discuss how skylines reflect a city's history and development.",
+            "date": "2027-03-16",
+            "time": "16:45",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4db",
+            "tags": ""
+        },
+        {
+            "id": "6900000000012",
+            "name": "Brand Identity Lab",
+            "description": "Experiment with visual identity systems, typography, and cohesive design language.",
+            "date": "2027-03-16",
+            "time": "18:00",
+            "location": "University Seminar Room",
+            "calId": "673a1f8b2c4d2",
+            "tags": ""
+        },
+        {
+            "id": "6900000000026",
+            "name": "Poetry Reading Circle",
+            "description": "Share poems and discuss imagery, rhythm, and interpretation.",
+            "date": "2027-03-17",
+            "time": "12:45",
+            "location": "Co-working Space - Room A",
+            "calId": "673a1f8b2c4d3",
+            "tags": ""
+        },
+        {
+            "id": "6900000000050",
+            "name": "Business Model Canvas Session",
+            "description": "Work through business model assumptions and identify areas to validate.",
+            "date": "2027-03-17",
+            "time": "12:45",
+            "location": "Online",
+            "calId": "673a1f8b2c4d6",
+            "tags": ""
+        },
+        {
+            "id": "69000000000a8",
+            "name": "Cloud Security Roundtable",
+            "description": "Discuss identity, configuration, monitoring, and cloud security practices.",
+            "date": "2027-03-17",
+            "time": "12:45",
+            "location": "Arts Workshop Studio",
+            "calId": "673a1f8b2c4dc",
+            "tags": ""
+        },
+        {
+            "id": "690000000003d",
+            "name": "Night Photography Basics",
+            "description": "Learn techniques for stable low-light shooting and handling challenging exposure.",
+            "date": "2027-03-23",
+            "time": "11:00",
+            "location": "Innovation Hub",
+            "calId": "673a1f8b2c4d5",
+            "tags": ""
+        },
+        {
+            "id": "690000000002d",
+            "name": "Emerging Tech Briefing",
+            "description": "Review recent developments in computing and discuss their practical implications.",
+            "date": "2027-03-25",
+            "time": "13:15",
+            "location": "Innovation Hub",
+            "calId": "673a1f8b2c4d4",
+            "tags": ""
+        },
+        {
+            "id": "69000000000ce",
+            "name": "Open Access Publishing Talk",
+            "description": "Discuss publishing models, repositories, and access to scholarly work.",
+            "date": "2027-03-26",
+            "time": "09:00",
+            "location": "Makerspace - Main Hall",
+            "calId": "673a1f8b2c4de",
+            "tags": ""
+        },
+        {
+            "id": "6900000000045",
+            "name": "Black and White Challenge",
+            "description": "Create monochrome images with attention to contrast, texture, and shape.",
+            "date": "2027-03-27",
+            "time": "13:30",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4d5",
+            "tags": ""
+        },
+        {
+            "id": "690000000003a",
+            "name": "Prototype Feedback Clinic",
+            "description": "Bring an early prototype and receive focused design and engineering feedback.",
+            "date": "2027-03-27",
+            "time": "19:45",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4d4",
+            "tags": ""
+        },
+        {
+            "id": "6900000000063",
+            "name": "Circular Economy Meetup",
+            "description": "Explore product reuse, recycling systems, and circular business models.",
+            "date": "2027-03-28",
+            "time": "18:30",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4d7",
+            "tags": ""
+        },
+        {
+            "id": "69000000000c0",
+            "name": "Art History Conversation",
+            "description": "Discuss an artistic movement and its influence on contemporary practice.",
+            "date": "2027-03-29",
+            "time": "14:00",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4dd",
+            "tags": ""
+        },
+        {
+            "id": "6900000000044",
+            "name": "Member Photo Critique",
+            "description": "Bring a small selection of images for constructive group feedback.",
+            "date": "2027-03-31",
+            "time": "11:00",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4d5",
+            "tags": ""
+        },
+        {
+            "id": "69000000000be",
+            "name": "Sculpture Materials Lab",
+            "description": "Explore form and texture using accessible sculptural materials.",
+            "date": "2027-04-01",
+            "time": "10:00",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4dd",
+            "tags": ""
+        },
+        {
+            "id": "69000000000d3",
+            "name": "Neighborhood Ideas Workshop",
+            "description": "Gather ideas for small initiatives that respond to local needs.",
+            "date": "2027-04-01",
+            "time": "11:00",
+            "location": "Riverside Conference Room",
+            "calId": "673a1f8b2c4df",
+            "tags": ""
+        },
+        {
+            "id": "6900000000091",
+            "name": "Inclusive Leadership Forum",
+            "description": "Discuss practical approaches to creating fair and welcoming workplaces.",
+            "date": "2027-04-01",
+            "time": "11:30",
+            "location": "Town Hall - Assembly Room",
+            "calId": "673a1f8b2c4da",
+            "tags": ""
+        },
+        {
+            "id": "690000000009d",
+            "name": "Street Art Discovery",
+            "description": "Explore public art and discuss its role in neighborhood identity.",
+            "date": "2027-04-01",
+            "time": "17:00",
+            "location": "Arts Workshop Studio",
+            "calId": "673a1f8b2c4db",
+            "tags": ""
+        },
+        {
+            "id": "690000000005b",
+            "name": "Renewable Energy Briefing",
+            "description": "Explore developments in solar, wind, storage, and energy transition policy.",
+            "date": "2027-04-02",
+            "time": "18:15",
+            "location": "University Seminar Room",
+            "calId": "673a1f8b2c4d7",
+            "tags": ""
+        },
+        {
+            "id": "69000000000cc",
+            "name": "Ethics in Research Forum",
+            "description": "Consider consent, responsible data use, and ethical review processes.",
+            "date": "2027-04-03",
+            "time": "13:45",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4de",
+            "tags": ""
+        },
+        {
+            "id": "6900000000030",
+            "name": "Cloud Architecture Workshop",
+            "description": "Explore scalable architecture patterns and common operational trade-offs.",
+            "date": "2027-04-03",
+            "time": "20:00",
+            "location": "Central Library - Meeting Room 2",
+            "calId": "673a1f8b2c4d4",
+            "tags": ""
+        },
+        {
+            "id": "6900000000035",
+            "name": "Product Demo Evening",
+            "description": "Show working prototypes and gather feedback from other members.",
+            "date": "2027-04-04",
+            "time": "10:00",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4d4",
+            "tags": ""
+        },
+        {
+            "id": "69000000000c1",
+            "name": "Collaborative Sound Session",
+            "description": "Experiment with rhythm, field recordings, and layered sound.",
+            "date": "2027-04-04",
+            "time": "14:30",
+            "location": "Central Library - Meeting Room 2",
+            "calId": "673a1f8b2c4dd",
+            "tags": ""
+        },
+        {
+            "id": "690000000006e",
+            "name": "Sound Design for Games",
+            "description": "Explore ambience, effects, and music that support gameplay.",
+            "date": "2027-04-04",
+            "time": "15:30",
+            "location": "Makerspace - Main Hall",
+            "calId": "673a1f8b2c4d8",
+            "tags": ""
+        },
+        {
+            "id": "6900000000079",
+            "name": "Academic Writing Workshop",
+            "description": "Practice structuring arguments, using sources, and revising written work.",
+            "date": "2027-04-05",
+            "time": "14:45",
+            "location": "Creative Studio",
+            "calId": "673a1f8b2c4d9",
+            "tags": ""
+        },
+        {
+            "id": "6900000000020",
+            "name": "Ethics After Dark",
+            "description": "Explore a practical ethical dilemma from several philosophical perspectives.",
+            "date": "2027-04-09",
+            "time": "15:00",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4d3",
+            "tags": ""
+        },
+        {
+            "id": "69000000000de",
+            "name": "Community Celebration",
+            "description": "Celebrate member contributions and recent local achievements.",
+            "date": "2027-04-10",
+            "time": "16:00",
+            "location": "Harbor Meeting House",
+            "calId": "673a1f8b2c4df",
+            "tags": ""
+        },
+        {
+            "id": "69000000000ac",
+            "name": "Vulnerability Disclosure Discussion",
+            "description": "Discuss responsible disclosure processes and coordinated remediation.",
+            "date": "2027-04-13",
+            "time": "19:45",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4dc",
+            "tags": ""
+        },
+        {
+            "id": "6900000000078",
+            "name": "Study Skills Exchange",
+            "description": "Share practical methods for planning study time and retaining information.",
+            "date": "2027-04-14",
+            "time": "13:00",
+            "location": "Online",
+            "calId": "673a1f8b2c4d9",
+            "tags": ""
+        },
+        {
+            "id": "6900000000093",
+            "name": "Leadership Book Discussion",
+            "description": "Discuss key ideas from a selected leadership and management book.",
+            "date": "2027-04-16",
+            "time": "11:00",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4da",
+            "tags": ""
+        },
+        {
+            "id": "6900000000028",
+            "name": "Book-to-Film Conversation",
+            "description": "Compare a literary work with its screen adaptation and discuss what changed.",
+            "date": "2027-04-17",
+            "time": "08:00",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4d3",
+            "tags": ""
+        },
+        {
+            "id": "69000000000b1",
+            "name": "Security Careers Roundtable",
+            "description": "Share career paths, certifications, and skills for security professionals.",
+            "date": "2027-04-17",
+            "time": "10:30",
+            "location": "Co-working Space - Room A",
+            "calId": "673a1f8b2c4dc",
+            "tags": ""
+        },
+        {
+            "id": "69000000000b3",
+            "name": "Monthly Security Briefing",
+            "description": "Review notable security lessons and discuss defensive takeaways.",
+            "date": "2027-04-17",
+            "time": "13:15",
+            "location": "Central Library - Meeting Room 2",
+            "calId": "673a1f8b2c4dc",
+            "tags": ""
+        },
+        {
+            "id": "690000000000e",
+            "name": "Year-End Community Review",
+            "description": "Reflect on progress, recognize contributors, and identify goals for the next year.",
+            "date": "2027-04-17",
+            "time": "14:15",
+            "location": "Online",
+            "calId": "673a1f8b2c4d1",
+            "tags": ""
+        },
+        {
+            "id": "690000000006f",
+            "name": "Narrative Design Meetup",
+            "description": "Discuss branching stories, character motivation, and environmental storytelling.",
+            "date": "2027-04-18",
+            "time": "13:00",
+            "location": "Makerspace - Main Hall",
+            "calId": "673a1f8b2c4d8",
+            "tags": ""
+        },
+        {
+            "id": "690000000004d",
+            "name": "Funding Options Roundtable",
+            "description": "Compare bootstrapping, grants, angel investment, and venture funding.",
+            "date": "2027-04-20",
+            "time": "11:15",
+            "location": "University Seminar Room",
+            "calId": "673a1f8b2c4d6",
+            "tags": ""
+        },
+        {
+            "id": "690000000007d",
+            "name": "Language Exchange Session",
+            "description": "Practice languages in small groups through guided conversation.",
+            "date": "2027-04-20",
+            "time": "20:00",
+            "location": "Makerspace - Main Hall",
+            "calId": "673a1f8b2c4d9",
+            "tags": ""
+        },
+        {
+            "id": "690000000004b",
+            "name": "Startup Pitch Practice",
+            "description": "Founders deliver short pitches and receive structured feedback from the group.",
+            "date": "2027-04-21",
+            "time": "18:00",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4d6",
+            "tags": ""
+        },
+        {
+            "id": "690000000007c",
+            "name": "Career Paths Panel",
+            "description": "Hear students and graduates discuss different routes after their studies.",
+            "date": "2027-04-22",
+            "time": "11:00",
+            "location": "Arts Workshop Studio",
+            "calId": "673a1f8b2c4d9",
+            "tags": ""
+        },
+        {
+            "id": "6900000000083",
+            "name": "Critical Thinking Seminar",
+            "description": "Practice evaluating claims, evidence, and sources.",
+            "date": "2027-04-22",
+            "time": "11:30",
+            "location": "Central Library - Meeting Room 2",
+            "calId": "673a1f8b2c4d9",
+            "tags": ""
+        },
+        {
+            "id": "69000000000a1",
+            "name": "Neighborhood Mapping Session",
+            "description": "Create a shared map of interesting public places and local resources.",
+            "date": "2027-04-22",
+            "time": "14:15",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4db",
+            "tags": ""
+        },
+        {
+            "id": "690000000005a",
+            "name": "Community Cleanup Day",
+            "description": "Join a local litter-picking activity and discuss ways to reduce waste.",
+            "date": "2027-04-24",
+            "time": "13:00",
+            "location": "Creative Studio",
+            "calId": "673a1f8b2c4d7",
+            "tags": ""
+        },
+        {
+            "id": "6900000000042",
+            "name": "Street Photography Discussion",
+            "description": "Talk about observation, timing, ethics, and storytelling in public spaces.",
+            "date": "2027-04-25",
+            "time": "17:00",
+            "location": "Online",
+            "calId": "673a1f8b2c4d5",
+            "tags": ""
+        },
+        {
+            "id": "690000000000b",
+            "name": "Community Roadmap Discussion",
+            "description": "Gather feedback and agree on priorities for the next development cycle.",
+            "date": "2027-04-25",
+            "time": "18:15",
+            "location": "Innovation Hub",
+            "calId": "673a1f8b2c4d1",
+            "tags": ""
+        },
+        {
+            "id": "69000000000b8",
+            "name": "Community Exhibition Planning",
+            "description": "Plan a small exhibition featuring work from members of the collective.",
+            "date": "2027-04-25",
+            "time": "20:30",
+            "location": "Harbor Meeting House",
+            "calId": "673a1f8b2c4dd",
+            "tags": ""
+        },
+        {
+            "id": "69000000000d0",
+            "name": "From Findings to Impact",
+            "description": "Explore how research results can inform policy, practice, and public understanding.",
+            "date": "2027-04-26",
+            "time": "11:00",
+            "location": "Central Library - Meeting Room 2",
+            "calId": "673a1f8b2c4de",
+            "tags": ""
+        },
+        {
+            "id": "690000000005d",
+            "name": "Repair and Reuse Workshop",
+            "description": "Learn simple ways to repair everyday items and extend their useful life.",
+            "date": "2027-04-27",
+            "time": "10:30",
+            "location": "Makerspace - Main Hall",
+            "calId": "673a1f8b2c4d7",
+            "tags": ""
+        },
+        {
+            "id": "69000000000dc",
+            "name": "Public Feedback Forum",
+            "description": "Collect feedback on community activities and identify improvements.",
+            "date": "2027-04-27",
+            "time": "12:00",
+            "location": "Creative Studio",
+            "calId": "673a1f8b2c4df",
+            "tags": ""
+        },
+        {
+            "id": "690000000002e",
+            "name": "AI Prototyping Lab",
+            "description": "Build small proof-of-concept ideas and compare approaches to rapid prototyping.",
+            "date": "2027-04-28",
+            "time": "18:45",
+            "location": "Community Hall",
+            "calId": "673a1f8b2c4d4",
+            "tags": ""
+        },
+        {
+            "id": "69000000000c9",
+            "name": "Grant Proposal Workshop",
+            "description": "Review common components of research proposals and funding applications.",
+            "date": "2027-04-29",
+            "time": "09:30",
+            "location": "Co-working Space - Room A",
+            "calId": "673a1f8b2c4de",
+            "tags": ""
+        },
+        {
+            "id": "6900000000060",
+            "name": "Composting Demonstration",
+            "description": "Learn the basics of composting and how to manage organic waste.",
+            "date": "2027-04-29",
+            "time": "15:00",
+            "location": "Innovation Hub",
+            "calId": "673a1f8b2c4d7",
+            "tags": ""
+        },
+        {
+            "id": "69000000000b7",
+            "name": "Mixed Media Workshop",
+            "description": "Experiment with combining materials and approaches in a single artwork.",
+            "date": "2027-04-30",
+            "time": "11:00",
+            "location": "Central Library - Meeting Room 2",
+            "calId": "673a1f8b2c4dd",
+            "tags": ""
+        },
+        {
+            "id": "69000000000e0",
+            "name": "Next Quarter Planning",
+            "description": "Set shared goals and organize the next round of community activities.",
+            "date": "2027-04-30",
+            "time": "13:00",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4df",
+            "tags": ""
+        },
+        {
+            "id": "69000000000af",
+            "name": "Application Security Testing",
+            "description": "Compare static, dynamic, and dependency analysis approaches.",
+            "date": "2027-05-01",
+            "time": "13:30",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4dc",
+            "tags": ""
+        },
+        {
+            "id": "6900000000038",
+            "name": "Research-to-Product Panel",
+            "description": "Discuss how emerging research can become useful products and services.",
+            "date": "2027-05-01",
+            "time": "18:30",
+            "location": "Co-working Space - Room A",
+            "calId": "673a1f8b2c4d4",
+            "tags": ""
+        },
+        {
+            "id": "690000000000d",
+            "name": "API Design Discussion",
+            "description": "Compare interface design approaches and discuss consistency across projects.",
+            "date": "2027-05-02",
+            "time": "16:00",
+            "location": "Arts Workshop Studio",
+            "calId": "673a1f8b2c4d1",
+            "tags": ""
+        },
+        {
+            "id": "6900000000076",
+            "name": "Prototype Demo Night",
+            "description": "Present playable builds and collect ideas for the next iteration.",
+            "date": "2027-05-04",
+            "time": "08:15",
+            "location": "Arts Workshop Studio",
+            "calId": "673a1f8b2c4d8",
+            "tags": ""
+        },
+        {
+            "id": "690000000002c",
+            "name": "Monthly Reflection Gathering",
+            "description": "Share ideas and passages that stayed with members during the month.",
+            "date": "2027-05-05",
+            "time": "13:45",
+            "location": "Riverside Conference Room",
+            "calId": "673a1f8b2c4d3",
+            "tags": ""
+        },
+        {
+            "id": "6900000000043",
+            "name": "Nature Macro Workshop",
+            "description": "Practice close-up photography and learn how to manage depth of field.",
+            "date": "2027-05-05",
+            "time": "18:30",
+            "location": "Innovation Hub",
+            "calId": "673a1f8b2c4d5",
+            "tags": ""
+        },
+        {
+            "id": "690000000007e",
+            "name": "Exam Preparation Meetup",
+            "description": "Share revision strategies and build a realistic study plan.",
+            "date": "2027-05-06",
+            "time": "13:00",
+            "location": "Makerspace - Main Hall",
+            "calId": "673a1f8b2c4d9",
+            "tags": ""
+        },
+        {
+            "id": "69000000000a5",
+            "name": "Threat Modeling Workshop",
+            "description": "Practice identifying assets, attack surfaces, and potential security risks.",
+            "date": "2027-05-06",
+            "time": "20:15",
+            "location": "Creative Studio",
+            "calId": "673a1f8b2c4dc",
+            "tags": ""
+        },
+        {
+            "id": "69000000000c8",
+            "name": "Peer Paper Discussion",
+            "description": "Read a selected paper and critically discuss its methods and conclusions.",
+            "date": "2027-05-07",
+            "time": "17:00",
+            "location": "Riverside Conference Room",
+            "calId": "673a1f8b2c4de",
+            "tags": ""
+        },
+        {
+            "id": "6900000000040",
+            "name": "Photo Editing Roundtable",
+            "description": "Compare editing approaches and share methods for consistent image treatment.",
+            "date": "2027-05-07",
+            "time": "17:15",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4d5",
+            "tags": ""
+        },
+        {
+            "id": "6900000000022",
+            "name": "The Philosophy of Time",
+            "description": "A guided conversation about time, change, and the experience of the present.",
+            "date": "2027-05-08",
+            "time": "08:00",
+            "location": "Creative Studio",
+            "calId": "673a1f8b2c4d3",
+            "tags": ""
+        },
+        {
+            "id": "69000000000d4",
+            "name": "Volunteer Coordination Session",
+            "description": "Match volunteers with upcoming activities and clarify responsibilities.",
+            "date": "2027-05-08",
+            "time": "11:30",
+            "location": "Riverside Conference Room",
+            "calId": "673a1f8b2c4df",
+            "tags": ""
+        },
+        {
+            "id": "69000000000d5",
+            "name": "Skills Sharing Afternoon",
+            "description": "Members teach one another useful practical or creative skills.",
+            "date": "2027-05-08",
+            "time": "18:30",
+            "location": "Town Hall - Assembly Room",
+            "calId": "673a1f8b2c4df",
+            "tags": ""
+        },
+        {
+            "id": "690000000007f",
+            "name": "Open Science Discussion",
+            "description": "Explore transparency, reproducibility, and access to academic research.",
+            "date": "2027-05-09",
+            "time": "16:15",
+            "location": "Arts Workshop Studio",
+            "calId": "673a1f8b2c4d9",
+            "tags": ""
+        },
+        {
+            "id": "6900000000013",
+            "name": "Content Planning Meetup",
+            "description": "Trade ideas for sustainable content calendars and audience engagement.",
+            "date": "2027-05-11",
+            "time": "19:00",
+            "location": "Town Hall - Assembly Room",
+            "calId": "673a1f8b2c4d2",
+            "tags": ""
+        },
+        {
+            "id": "6900000000092",
+            "name": "Change Management Case Study",
+            "description": "Analyze a real-world style scenario and identify lessons for leaders.",
+            "date": "2027-05-11",
+            "time": "20:45",
+            "location": "Makerspace - Main Hall",
+            "calId": "673a1f8b2c4da",
+            "tags": ""
+        },
+        {
+            "id": "690000000007b",
+            "name": "Research Methods Introduction",
+            "description": "Review qualitative and quantitative approaches to academic research.",
+            "date": "2027-05-12",
+            "time": "19:15",
+            "location": "Makerspace - Main Hall",
+            "calId": "673a1f8b2c4d9",
+            "tags": ""
+        },
+        {
+            "id": "6900000000099",
+            "name": "Historic District Exploration",
+            "description": "Walk through a historic area and examine changes in its built environment.",
+            "date": "2027-05-13",
+            "time": "09:30",
+            "location": "Town Hall - Assembly Room",
+            "calId": "673a1f8b2c4db",
+            "tags": ""
+        },
+        {
+            "id": "69000000000a3",
+            "name": "Adaptive Reuse Case Studies",
+            "description": "Explore buildings that have been repurposed for new uses.",
+            "date": "2027-05-13",
+            "time": "19:15",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4db",
+            "tags": ""
+        },
+        {
+            "id": "69000000000cb",
+            "name": "Scientific Visualization Clinic",
+            "description": "Discuss clear ways to present complex findings through figures and charts.",
+            "date": "2027-05-14",
+            "time": "17:00",
+            "location": "Innovation Hub",
+            "calId": "673a1f8b2c4de",
+            "tags": ""
+        },
+        {
+            "id": "6900000000056",
+            "name": "Founder Networking Breakfast",
+            "description": "Connect with other founders and exchange current challenges and opportunities.",
+            "date": "2027-05-14",
+            "time": "18:30",
+            "location": "University Seminar Room",
+            "calId": "673a1f8b2c4d6",
+            "tags": ""
+        },
+        {
+            "id": "6900000000098",
+            "name": "Public Space Observation",
+            "description": "Study how people use a shared space and what makes it welcoming.",
+            "date": "2027-05-15",
+            "time": "14:00",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4db",
+            "tags": ""
+        },
+        {
+            "id": "6900000000031",
+            "name": "Hardware Innovation Showcase",
+            "description": "Present experimental devices, components, and engineering concepts.",
+            "date": "2027-05-16",
+            "time": "14:45",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4d4",
+            "tags": ""
+        },
+        {
+            "id": "6900000000039",
+            "name": "Technology Trends Debate",
+            "description": "Choose several current trends and evaluate their likely long-term impact.",
+            "date": "2027-05-18",
+            "time": "18:00",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4d4",
+            "tags": ""
+        },
+        {
+            "id": "6900000000027",
+            "name": "The Nature of Happiness",
+            "description": "Discuss competing ideas about happiness, purpose, and a meaningful life.",
+            "date": "2027-05-18",
+            "time": "19:00",
+            "location": "Co-working Space - Room A",
+            "calId": "673a1f8b2c4d3",
+            "tags": ""
+        },
+        {
+            "id": "6900000000081",
+            "name": "Student Project Showcase",
+            "description": "Present coursework or independent projects and exchange feedback.",
+            "date": "2027-05-19",
+            "time": "20:45",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4d9",
+            "tags": ""
+        },
+        {
+            "id": "69000000000bb",
+            "name": "Creative Practice Roundtable",
+            "description": "Discuss routines, inspiration, and ways to keep making work.",
+            "date": "2027-05-20",
+            "time": "09:15",
+            "location": "Riverside Conference Room",
+            "calId": "673a1f8b2c4dd",
+            "tags": ""
+        },
+        {
+            "id": "690000000002a",
+            "name": "Author Deep Dive",
+            "description": "Explore the themes, influences, and style of a selected author.",
+            "date": "2027-05-21",
+            "time": "14:30",
+            "location": "Arts Workshop Studio",
+            "calId": "673a1f8b2c4d3",
+            "tags": ""
+        },
+        {
+            "id": "6900000000075",
+            "name": "Multiplayer Systems Discussion",
+            "description": "Explore synchronization, matchmaking, and cooperative game design.",
+            "date": "2027-05-23",
+            "time": "08:15",
+            "location": "Public Garden Pavilion",
+            "calId": "673a1f8b2c4d8",
+            "tags": ""
+        },
+        {
+            "id": "690000000006c",
+            "name": "Level Design Roundtable",
+            "description": "Discuss pacing, difficulty curves, navigation, and player feedback.",
+            "date": "2027-05-24",
+            "time": "13:00",
+            "location": "Co-working Space - Room A",
+            "calId": "673a1f8b2c4d8",
+            "tags": ""
+        },
+        {
+            "id": "69000000000aa",
+            "name": "Security Operations Meetup",
+            "description": "Exchange ideas about alert triage, detection, and incident workflows.",
+            "date": "2027-05-25",
+            "time": "14:45",
+            "location": "Riverside Conference Room",
+            "calId": "673a1f8b2c4dc",
+            "tags": ""
+        },
+        {
+            "id": "69000000000bf",
+            "name": "Illustration Exchange",
+            "description": "Swap prompts and create quick illustrations inspired by one another.",
+            "date": "2027-05-25",
+            "time": "16:15",
+            "location": "University Seminar Room",
+            "calId": "673a1f8b2c4dd",
+            "tags": ""
+        },
+        {
+            "id": "690000000001a",
+            "name": "Personal Projects Showcase",
+            "description": "Bring an unfinished or completed project and talk through its development.",
+            "date": "2027-05-27",
+            "time": "12:30",
+            "location": "Arts Workshop Studio",
+            "calId": "673a1f8b2c4d2",
+            "tags": ""
+        },
+        {
+            "id": "69000000000a4",
+            "name": "Urban Exploration Photo Review",
+            "description": "Share images from recent explorations and discuss responsible practices.",
+            "date": "2027-05-27",
+            "time": "14:15",
+            "location": "Co-working Space - Room A",
+            "calId": "673a1f8b2c4db",
+            "tags": ""
+        },
+        {
+            "id": "6900000000037",
+            "name": "Data Platforms Discussion",
+            "description": "Compare approaches to storing, processing, and governing data.",
+            "date": "2027-05-27",
+            "time": "15:00",
+            "location": "Community Hall",
+            "calId": "673a1f8b2c4d4",
+            "tags": ""
+        },
+        {
+            "id": "6900000000021",
+            "name": "Unreliable Narrators",
+            "description": "Discuss how perspective and narration shape a reader's understanding of a story.",
+            "date": "2027-05-30",
+            "time": "09:30",
+            "location": "Innovation Hub",
+            "calId": "673a1f8b2c4d3",
+            "tags": ""
+        },
+        {
+            "id": "69000000000d9",
+            "name": "Community Storytelling Night",
+            "description": "Share personal stories about places, people, and local traditions.",
+            "date": "2027-05-30",
+            "time": "11:00",
+            "location": "City Cultural Centre",
+            "calId": "673a1f8b2c4df",
+            "tags": ""
+        },
+        {
+            "id": "690000000004e",
+            "name": "Founder Resilience Meetup",
+            "description": "Share practical ways to navigate uncertainty and maintain momentum.",
+            "date": "2027-05-30",
+            "time": "12:00",
+            "location": "Innovation Hub",
+            "calId": "673a1f8b2c4d6",
+            "tags": ""
+        },
+        {
+            "id": "690000000002b",
+            "name": "Open Reading Salon",
+            "description": "Bring any current read for an informal evening of conversation.",
+            "date": "2027-05-30",
+            "time": "13:15",
+            "location": "Makerspace - Main Hall",
+            "calId": "673a1f8b2c4d3",
+            "tags": ""
+        },
+        {
+            "id": "6900000000080",
+            "name": "Presentation Skills Workshop",
+            "description": "Practice clear academic presentations and confident delivery.",
+            "date": "2027-05-30",
+            "time": "14:00",
+            "location": "Arts Workshop Studio",
+            "calId": "673a1f8b2c4d9",
+            "tags": ""
+        },
+        {
+            "id": "69000000000b6",
+            "name": "Music and Ideas Evening",
+            "description": "Share original music and discuss influences, techniques, and creative process.",
+            "date": "2027-05-31",
+            "time": "14:00",
+            "location": "Northside Community Space",
+            "calId": "673a1f8b2c4dd",
+            "tags": ""
+        }
+    ]
+}

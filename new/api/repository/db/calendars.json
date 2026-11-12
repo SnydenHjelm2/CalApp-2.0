@@ -1,0 +1,214 @@
+{
+    "calendars": [
+        {
+            "id": "673a1f8b2c4d1",
+            "name": "Plan B",
+            "description": "Plan B Malmö is an independent venue for concerts, club nights, festivals and cultural events in Malmö.",
+            "isPublic": 1,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4d2",
+            "name": "Digital Creators Network",
+            "description": "A group for digital artists, designers, and content creators to exchange ideas and showcase their work.",
+            "isPublic": 1,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4d3",
+            "name": "VIP",
+            "description": "VIP HT26 Calendar",
+            "isPublic": 0,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4d4",
+            "name": "Tech Innovators Alliance",
+            "description": "An organization dedicated to exploring emerging technologies and developing innovative solutions.",
+            "isPublic": 1,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4d5",
+            "name": "Northern Lights Photography Club",
+            "description": "A community of photography enthusiasts sharing techniques, experiences, and their best captures.",
+            "isPublic": 1,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4d6",
+            "name": "The Founders Circle",
+            "description": "An exclusive network for entrepreneurs and startup founders to discuss business strategies and opportunities.",
+            "isPublic": 0,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4d7",
+            "name": "Green Future Initiative",
+            "description": "An environmental organization promoting sustainability, renewable energy, and conservation.",
+            "isPublic": 1,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4d8",
+            "name": "Pixel Pioneers",
+            "description": "A private group for game developers and digital artists working on creative projects together.",
+            "isPublic": 0,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4d9",
+            "name": "Global Student Forum",
+            "description": "An international community where students can connect, collaborate, and exchange academic knowledge.",
+            "isPublic": 1,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4da",
+            "name": "The Strategy Room",
+            "description": "A private organization for professionals interested in leadership, strategic planning, and organizational growth.",
+            "isPublic": 0,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4db",
+            "name": "Urban Explorers Association",
+            "description": "A community dedicated to discovering interesting places, architecture, and hidden gems in urban environments.",
+            "isPublic": 1,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4dc",
+            "name": "Cybersecurity Professionals Network",
+            "description": "A private network for cybersecurity professionals to share research, discuss threats, and exchange best practices.",
+            "isPublic": 0,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4dd",
+            "name": "Creative Minds Collective",
+            "description": "An open community for writers, designers, musicians, and other creative individuals.",
+            "isPublic": 1,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4de",
+            "name": "The Research Guild",
+            "description": "A private group for researchers collaborating on scientific studies and sharing academic resources.",
+            "isPublic": 0,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4df",
+            "name": "Community Builders Network",
+            "description": "An organization focused on helping individuals build stronger communities through collaboration and shared initiatives.",
+            "isPublic": 1,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4d1",
+            "name": "Open Source Collective",
+            "description": "A community of developers collaborating on open-source projects and sharing knowledge.",
+            "isPublic": 1,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4d2",
+            "name": "Digital Creators Network",
+            "description": "A group for digital artists, designers, and content creators to exchange ideas and showcase their work.",
+            "isPublic": 1,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4d3",
+            "name": "The Midnight Society",
+            "description": "A private community for members who enjoy discussing literature, philosophy, and unconventional ideas.",
+            "isPublic": 0,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4d4",
+            "name": "Tech Innovators Alliance",
+            "description": "An organization dedicated to exploring emerging technologies and developing innovative solutions.",
+            "isPublic": 1,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4d5",
+            "name": "Northern Lights Photography Club",
+            "description": "A community of photography enthusiasts sharing techniques, experiences, and their best captures.",
+            "isPublic": 1,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4d6",
+            "name": "The Founders Circle",
+            "description": "An exclusive network for entrepreneurs and startup founders to discuss business strategies and opportunities.",
+            "isPublic": 0,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4d7",
+            "name": "Green Future Initiative",
+            "description": "An environmental organization promoting sustainability, renewable energy, and conservation.",
+            "isPublic": 1,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4d8",
+            "name": "Pixel Pioneers",
+            "description": "A private group for game developers and digital artists working on creative projects together.",
+            "isPublic": 0,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4d9",
+            "name": "Global Student Forum",
+            "description": "An international community where students can connect, collaborate, and exchange academic knowledge.",
+            "isPublic": 1,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4da",
+            "name": "The Strategy Room",
+            "description": "A private organization for professionals interested in leadership, strategic planning, and organizational growth.",
+            "isPublic": 0,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4db",
+            "name": "Urban Explorers Association",
+            "description": "A community dedicated to discovering interesting places, architecture, and hidden gems in urban environments.",
+            "isPublic": 1,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4dc",
+            "name": "Cybersecurity Professionals Network",
+            "description": "A private network for cybersecurity professionals to share research, discuss threats, and exchange best practices.",
+            "isPublic": 0,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4dd",
+            "name": "Creative Minds Collective",
+            "description": "An open community for writers, designers, musicians, and other creative individuals.",
+            "isPublic": 1,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4de",
+            "name": "The Research Guild",
+            "description": "A private group for researchers collaborating on scientific studies and sharing academic resources.",
+            "isPublic": 0,
+            "isDeleted": 0
+        },
+        {
+            "id": "673a1f8b2c4df",
+            "name": "Community Builders Network",
+            "description": "An organization focused on helping individuals build stronger communities through collaboration and shared initiatives.",
+            "isPublic": 1,
+            "isDeleted": 0
+        }
+    ]
+}

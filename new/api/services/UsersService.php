@@ -1,7 +1,7 @@
 <?php
     require_once __DIR__ . "/../repository/DBAccess.php";
 
-    class UserService {
+    class UsersService {
         public static function getAllUsers()
         {
             $db = new DBAccess("users");

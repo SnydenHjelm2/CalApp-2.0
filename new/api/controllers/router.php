@@ -5,6 +5,7 @@ require_once __DIR__ . "/../middleware/Middleware.php";
 
 // Controllers
 require_once __DIR__ . "/UsersEventsController.php";
+require_once __DIR__ . "/BackupDBController.php";
 
 function Router($requestUrl = null){
     CorsMiddleware::handle();
@@ -30,6 +31,11 @@ function Router($requestUrl = null){
     }
 
     switch ($path) {
+        //återställa DB
+        case "backup":
+            BackupDBController::handle($method, $input);
+            break;
+
         case "cal_msgs":
             
             break;
@@ -55,7 +61,7 @@ function Router($requestUrl = null){
             break;
 
         case "users_events":
-
+            UsersEventsController::handle($method, $input);
             break;
 
         case "users_users":

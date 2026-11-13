@@ -148,6 +148,10 @@ class UsersCalendarsService {
 
     //  Requirs: id (relation id), adminId
     public static function removeUserFromCal($input) {
+        $userId = $input["userId"];
+        $calId = $input["calId"];
+        $init = $input["init"]; //userId av den user som försöker ta bort en connection (den som är inloggad exempelvis)
+
         $dbUG = new DBAccess("users_calendars");
         $dbU = new DBAccess("users");
         $dbC = new DBAccess("calendars");
@@ -160,33 +164,19 @@ class UsersCalendarsService {
         }
 
         $relations = $dbUG->getAll();
-        $relId = null;
-        foreach ($relations as $rel){
-            if ($rel["userId"] == $userId && $rel["calId"] == $calId){
-                $relId = $rel["id"];
-            }
-        }
-        if (!$relId) {
+        $exists = array_find($relations, fn($x) => $x["userId"] === $userId && $x["calId"] === $calId);
+        if (!$exists) {
             throw new Exception("Relation not found.", 404);
         }
 
+        //Authorization check
+        // $connsFromCal = self::getAllRelationsByCalId($calId);
+        // $initUser = array_find($connsFromCal, fn($x) => $x["userId"] === $init);
+        // if ($initUser["canDelete"] === 0 && $initUser["canAll"] === 0) {
+        //     throw new Exception("Missing pemissions", 401);
+        // }
 
-        /*
-        $relations = self::getAllRelationsByCalId($calId);
-        
-        // is admin is admin?
-        $adminIsAdmin = false;
-        foreach ($relations as $rel) {
-            if ($rel["userId"] == $adminId && $rel["isAdmin"] === true) {
-                $adminIsAdmin = true;
-                break;
-            }
-        }
-        if (!$adminIsAdmin) {
-            throw new Exception("Only admin can remove users from calendar.");
-        }
-        */
-        $success = $dbUG->deleteData($relId);
+        $success = $dbUG->deleteData($exists["id"]);
         if ($success){
             return ["message" => "Deleted successfully!"];
         }

@@ -107,6 +107,14 @@ class UsersCalendarsController {
 
         if ($method === "DELETE") {
             try {
+                $userId = $input["userId"] ?? null;
+                $calId = $input["calId"] ?? null;
+                $init = $input["init"] ?? null;
+
+                if (!$userId || !$calId || !$init) {
+                    throw new Exception("Missing attributes");
+                }
+
                 $result = UsersCalendarsService::removeUserFromCal($input);
                 Response::send($result, 200);
                 return;

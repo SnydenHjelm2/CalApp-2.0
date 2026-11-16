@@ -1,6 +1,7 @@
 <?php
 
     require_once __DIR__ . "/../services/UsersService.php";
+    require_once __DIR__ . "/response.php";
 
     class UsersController {
         public static function handle($method, $input) {
@@ -16,18 +17,6 @@
                         echo json_encode($result);
                         return;
                     }
-                } else if (isset($input["calId"])){
-                    try {
-                        $result = UsersService::getUsersInCal($input["calId"]);
-                        http_response_code(200);
-                        echo json_encode($result);
-                        return;
-                    } catch (Exception $exc) {
-                        http_response_code(404);
-                        echo json_encode(["error" => $exc->getMessage()]);
-                        return;
-                    }
-                    
                 }
                 $result = UsersService::getAllUsers();
                 http_response_code(200);
@@ -72,7 +61,7 @@
                         return;
                     } else {
                         http_response_code(200);
-                        echo json_encode(["message" => "Update OK"]);
+                        echo json_encode($result);
                         return;
                     }
                     

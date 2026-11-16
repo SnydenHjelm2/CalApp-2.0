@@ -39,9 +39,9 @@ class UsersCalendarsController {
                 $userId  = $input["userId"] ?? null;
                 $calId = $input["calId"] ?? null;
                 $isCreator = $input["isCreator"] ?? null;
-                $calAll = $input["canAll"] ?? null;
+                $canAll = $input["canAll"] ?? null;
 
-                if (!$userId || !$calId || $calAll === null || $isCreator === null) {
+                if (!$userId || !$calId || $canAll === null || $isCreator === null) {
                     throw new Exception("Missing attributes");
                 }
 
@@ -94,7 +94,7 @@ class UsersCalendarsController {
 
                 if (!$something) throw new Exception("No patchable attributes");
 
-                $result = UsersCalendarsService::makeUserCalAdmin($input);
+                $result = UsersCalendarsService::changePermissions($input);
                 Response::send($result, 200);
                 return;
 
@@ -109,9 +109,9 @@ class UsersCalendarsController {
             try {
                 $userId = $input["userId"] ?? null;
                 $calId = $input["calId"] ?? null;
-                $init = $input["init"] ?? null;
+                //$init = $input["init"] ?? null;
 
-                if (!$userId || !$calId || !$init) {
+                if (!$userId || !$calId) {
                     throw new Exception("Missing attributes");
                 }
 

@@ -23,27 +23,25 @@ class CalendarsController{
                 } 
                 // Denna tar emot flera catchs beroende på id eller alla
             } catch(Exception $error){
-                return Response::sendResponse(["error" => $error->getMessage()], 404);
+                return Response::send(["error" => $error->getMessage()], 404);
             } 
         }
 
         if($method == "POST"){
             try{
                 if(
-                    !isset($input["creatorId"]) || //Döpa om?
                     !isset($input["name"]) || 
                     !isset($input["description"]) || 
-                    !isset($input["isPublic"]) // behövs?
+                    !isset($input["isPublic"]) ||
+                    !isset($input["creatorId"])
                 ){
                     return Response::send(["error" => "Attributes missing"], 400);
                 } else {
                     return Response::send(CalendarsService::calendarsPost($input), 201);
                 }
-            } catch(Invalid $error){ // invalid?
-                return Response::send(["error" => $error->getMessage()], 400);
-            } catch(AlreadyInGroup $error){ // AlreadyInGroup?
-                return Response::send(["error" => $error->getMessage()], 409);
-            }
+            } catch(Exception $error){ // invalid?
+                return Response::send(["error" => $error->getMessage()], $error->getCode());
+            } 
 
         }
 
@@ -56,21 +54,21 @@ class CalendarsController{
                 }
 
             } catch(Exception $error){
-                return Response::send(["error" => $error->getMessage()], 400);
+                return Response::send(["error" => $error->getMessage()], $error->getCode());
             }
 
         }
 
         if($method == "DELETE"){
             try{
-                if(!isset($input["id"])){
+                if(!isset($input["calId"]) || !isset($input["userId"])){
                     return Response::send(["error" => "Missing attributes"], 400);
                 } else {
                     return Response::send(CalendarsService::calendarsDelete($input), 200);
                 }
 
             } catch(Exception $error){
-                return Response::send(["error" => $error->getMessage()], 404);
+                return Response::send(["error" => $error->getMessage()], $error->getCode());
             }
 
 

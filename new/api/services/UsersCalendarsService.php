@@ -8,7 +8,7 @@ class UsersCalendarsService {
         $relations = $db->getAll();
 
         if (empty($relations)) {
-            throw new Exception("No relations found.");
+            throw new Exception("No relations found.", 404);
         }
 
         return $relations;
@@ -19,7 +19,7 @@ class UsersCalendarsService {
         $relation = $db->findById($id);
 
         if (!$relation) {
-            throw new Exception("Relation not found.");
+            throw new Exception("Relation not found.", 404);
         }
 
         return $relation;
@@ -44,7 +44,7 @@ class UsersCalendarsService {
         // Validate user exists
         $dbUsers = new DBAccess("users");
         if (!$dbUsers->findById($userId)) {
-            throw new Exception("User not found.");
+            throw new Exception("User not found.", 404);
         }
 
         $db = new DBAccess("users_calendars");
@@ -150,7 +150,7 @@ class UsersCalendarsService {
     public static function removeUserFromCal($input) {
         $userId = $input["userId"];
         $calId = $input["calId"];
-        $init = $input["init"]; //userId av den user som försöker ta bort en connection (den som är inloggad exempelvis)
+        //$init = $input["init"]; //userId av den user som försöker ta bort en connection (den som är inloggad exempelvis)
 
         $dbUG = new DBAccess("users_calendars");
         $dbU = new DBAccess("users");
@@ -185,7 +185,7 @@ class UsersCalendarsService {
 
 
     //  Requires: id (relation id), adminId? Denna inte klar.
-    public static function makeUserCalAdmin($input)
+    public static function changePermissions($input)
     {
         $userId  = $input["userId"];
         $calId = $input["calId"];

@@ -9,6 +9,7 @@ require_once __DIR__ . "/BackupDBController.php";
 require_once __DIR__ . "/UsersController.php";
 require_once __DIR__ . "/EventsController.php";
 require_once __DIR__ . "/UsersCalendarsController.php";
+require_once __DIR__ . "/CalendarsController.php";
 
 function Router($requestUrl = null){
     CorsMiddleware::handle();
@@ -42,7 +43,7 @@ function Router($requestUrl = null){
             break;
 
         case "calendars":
-            
+            CalendarsController::handle($method, $input);
             break;
 
         case "cal_msgs":

@@ -3,33 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Test</title>
 </head>
 <body>
     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .fail {
+            background-color: tomato;
+        }
+
         pre {
             border-radius: 10px;
             padding: 20px;
             font-size: 14px;
             overflow-x: auto;
-            background-color: lightgreen;
+            background-color: lightgray;
         }
 
         code {
             font-family: 'Fira Code', monospace;
         }
+
+        .success {
+            background-color: lightgreen;
+        }
+
+        .test {
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .test h2 {
+            margin: 5px 0px;
+        }
+
+        .test p {
+            margin: 5px 0px;
+        }
     </style>
+    <h3></h3>
 
-    <pre>
-        <code class="language-javascript">
-            function hello() {
-                console.log("Hello, world!");
-            }
-        </code>
-    </pre>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
     <script src="test.js"></script>
 </body>
 </html>

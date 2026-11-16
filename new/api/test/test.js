@@ -10,9 +10,766 @@ const req = {
         let request = new Request("http://localhost:8000/" + endpoint, options);
 
         let resp = await fetch(request);
-        console.log(resp.status);
 
         let reso = await resp.json();
-        console.log(reso);
+        return {
+            status: resp.status,
+            statusText: resp.statusText,
+            body: reso
+        };
     }
 }
+
+const spawn = {
+    test(endpoint, response, test) {
+        let div = document.createElement("div");
+        div.classList.add("test");
+        div.innerHTML = `
+            <h2>${test.method} /${endpoint}</h2>
+            <p>${response.status} ${response.statusText}</p>
+            <p>${test.desc}</p>
+            <p>
+            <pre>
+                <code>
+                    ${JSON.stringify(response.body)}
+                </code>
+            </pre>
+        `;
+
+        if (response.status === test.expected) div.classList.add("success");
+        else div.classList.add("fail");
+        document.body.appendChild(div);
+    }
+}
+
+const test = {
+    endpoints: ["users", "calendars", "users_calendars", "events", "users_events", "users_users", "cal_msgs", "priv_msgs"],
+
+    async resetDb(endpoint) {
+        if (endpoint) await req.send("backup?entity=" + endpoint, "GET");
+        else await req.send("backup?entity=all", "GET");
+    },
+
+    async run(endpoint, method, params, body) {
+        if (params) endpoint += `?${params}`;
+
+        if (method === "GET") {
+            let reso = await req.send(endpoint, method);
+            return {
+                endpoint: endpoint,
+                reso: reso
+            };
+        } else {
+            let reso = await req.send(endpoint, method, body);
+            return {
+                endpoint: endpoint,
+                reso: reso
+            };
+        }
+    },
+
+    async runAll() {
+        for (let endpoint of this.endpoints) {
+            for (let test of this.tests[endpoint]) {
+                let result = await this.run(endpoint, test.method, test.params, test.body);
+                spawn.test(result.endpoint, result.reso, test);
+            }
+
+            await this.resetDb(endpoint);
+        }
+
+        let allTests = document.querySelectorAll(".test");
+        let allSuccess = document.querySelectorAll(".success");
+        document.querySelector("h3").textContent = `Succeeded tests: ${allSuccess.length}/${allTests.length}`;
+    },
+
+    tests: {
+        users: [
+            {
+                params: null,
+                method: "GET",
+                body: null,
+                desc: "Get all users",
+                expected: 200
+            },
+
+            {
+                params: "id=65e10aa11a001",
+                method: "GET",
+                body: null,
+                desc: "Get user by ID",
+                expected: 200
+            },
+
+            {
+                params: "id=fakeId",
+                method: "GET",
+                body: null,
+                desc: "Get user by invalid ID",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    name: "test",
+                    pwd: "test",
+                    email: "test@test.com"
+                },
+                desc: "Create new user",
+                expected: 201
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    name: "test",
+                    pwd: "test",
+                },
+                desc: "Create new user with invalid request body",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    name: "test",
+                    pwd: "test",
+                    email: "elle@gamil.com"
+                },
+                desc: "Create new user with existing email",
+                expected: 409
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    id: "65e10aa11a001",
+                    name: "test",
+                    pwd: "test",
+                },
+                desc: "Edit user credentials",
+                expected: 200
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    name: "test",
+                    pwd: "test",
+                },
+                desc: "Edit user credentials with invalid request body",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    id: "fakeId",
+                    name: "test",
+                    pwd: "test",
+                },
+                desc: "Edit user credentials with invalid userId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    id: "65e10aa11a001",
+                    email: "elle@gamil.com",
+                    pwd: "test"
+                },
+                desc: "Delete user",
+                expected: 200
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    email: "elle@gamil.com",
+                    pwd: "test"
+                },
+                desc: "Delete user with invalid request body (missing userId)",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    id: "65e10aa11a001",
+                    pwd: "test"
+                },
+                desc: "Delete user with invalid request body (missing pwd or email)",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    id: "fakeId",
+                    email: "elle@gamil.com",
+                    pwd: "test"
+                },
+                desc: "Delete user with invalid userId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    id: "65e10aa11a002",
+                    email: "elle@gamil.com",
+                    pwd: "wrong"
+                },
+                desc: "Delete user with wrong credentials",
+                expected: 403
+            },
+        ],
+
+        calendars: [
+            {
+                params: null,
+                method: "GET",
+                body: null,
+                desc: "Get all calendars",
+                expected: 200
+            },
+
+            {
+                params: "id=673a1f8b2c4d1",
+                method: "GET",
+                body: null,
+                desc: "Get calendar by ID",
+                expected: 200
+            },
+
+            {
+                params: "id=fakeId",
+                method: "GET",
+                body: null,
+                desc: "Get calendar by invalid calId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    name: "test",
+                    description: "test",
+                    isPublic: 0,
+                    creatorId: "65e10aa11a001"
+                },
+                desc: "Create new calendar",
+                expected: 201
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    name: "test",
+                    isPublic: 0,
+                    creatorId: "65e10aa11a001"
+                },
+                desc: "Create new calendar with invalid request body",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    name: "test",
+                    description: "test",
+                    isPublic: "test",
+                    creatorId: "65e10aa11a001"
+                },
+                desc: "Create new calendar with invalid type of isPublic attribute",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    name: "test",
+                    description: "test",
+                    isPublic: 3,
+                    creatorId: "65e10aa11a001"
+                },
+                desc: "Create new calendar with invalid value of isPublic attribute",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    name: "test",
+                    description: "test",
+                    isPublic: 0,
+                    creatorId: "fakeId"
+                },
+                desc: "Create new calendar, connection fail to be made (ex invalid creatorId)",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a001",
+                    name: "test",
+                    description: "test",
+                    isPublic: 1,
+                },
+                desc: "Edit calendar",
+                expected: 200
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a001",
+                    name: "test",
+                    description: "test",
+                    isPublic: 3,
+                },
+                desc: "Edit calendar with invalid value of isPublic or isDeleted",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a001",
+                    name: "test",
+                    description: "test",
+                    isPublic: "test",
+                },
+                desc: "Edit calendar with invalid type of isPublic or isDeleted",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a002",
+                    name: "test",
+                    description: "test",
+                    isPublic: 1,
+                },
+                desc: "Edit calendar where user is not member of calendar",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a007",
+                    name: "test",
+                    description: "test",
+                    isPublic: 1,
+                },
+                desc: "Edit calendar where user does not have permission to edit",
+                expected: 401
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    calId: "fakeId",
+                    userId: "65e10aa11a001",
+                    name: "test",
+                    description: "test",
+                    isPublic: 1,
+                },
+                desc: "Edit calendar with invalid calId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a001",
+                },
+                desc: "Edit calendar with no changeable attributes",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    calId: "673a1f8b2c4d1",
+                    userId: "fakeId",
+                    name: "test"
+                },
+                desc: "Edit calendar with invalid userId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a001"
+                },
+                desc: "Delete calendar",
+                expected: 200
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    calId: "673a1f8b2c4d1",
+                },
+                desc: "Delete calendar with invalid request body",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    calId: "fakeId",
+                    userId: "65e10aa11a001"
+                },
+                desc: "Delete calendar with invalid calId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a002"
+                },
+                desc: "Delete calendar with userId not in cal",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a007"
+                },
+                desc: "Delete calendar with userId without permissions to delete",
+                expected: 401
+            },
+        ],
+
+        users_calendars: [
+            {
+                params: null,
+                method: "GET",
+                body: null,
+                desc: "Get all users_calendars connections",
+                expected: 200
+            },
+
+            {
+                params: "id=6af5a7bf0fc0d",
+                method: "GET",
+                body: null,
+                desc: "Get users_calendars connection by ID",
+                expected: 200
+            },
+
+            {
+                params: "userId=65e10aa11a001",
+                method: "GET",
+                body: null,
+                desc: "Get all users_calendars connections by userId",
+                expected: 200
+            },
+
+            {
+                params: "calId=673a1f8b2c4d1",
+                method: "GET",
+                body: null,
+                desc: "Get all users_calendars connections by calId",
+                expected: 200
+            },
+
+            {
+                params: "id=fakeId",
+                method: "GET",
+                body: null,
+                desc: "Get users_calendars connection by invalid ID",
+                expected: 404
+            },
+
+            {
+                params: "userId=fakeId",
+                method: "GET",
+                body: null,
+                desc: "Get all users_calendars connections by invalid userId",
+                expected: 404
+            },
+
+            {
+                params: "calId=fakeId",
+                method: "GET",
+                body: null,
+                desc: "Get all users_calendars connections by invalid calId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    userId: "65e10aa11a001",
+                    calId: "673a1f8b2c4d2",
+                    isCreator: 0,
+                    canAll: 0
+                },
+                desc: "Create new users_calendars connection (add user to calendar)",
+                expected: 201
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    userId: "65e10aa11a001",
+                    calId: "673a1f8b2c4d2",
+                    isCreator: 0,
+                },
+                desc: "Create new users_calendars connection (add user to calendar) with invalid request body",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    userId: "fakeId",
+                    calId: "673a1f8b2c4d2",
+                    isCreator: 0,
+                    canAll: 0
+                },
+                desc: "Create new users_calendars connection (add user to calendar) with invalid userId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    userId: "65e10aa11a001",
+                    calId: "fakeId",
+                    isCreator: 0,
+                    canAll: 0
+                },
+                desc: "Create new users_calendars connection (add user to calendar) with invalid calId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    userId: "65e10aa11a001",
+                    calId: "673a1f8b2c4d1",
+                    isCreator: 0,
+                    canAll: 0
+                },
+                desc: "Create new users_calendars connection (add user to calendar) where connection already exists",
+                expected: 409
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    userId: "65e10aa11a001",
+                    calId: "673a1f8b2c4d3",
+                    isCreator: 0,
+                    canAll: "test"
+                },
+                desc: "Create new users_calendars connection (add user to calendar) where invalid type was used in permissions attribute",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    userId: "65e10aa11a001",
+                    calId: "673a1f8b2c4d3",
+                    isCreator: 0,
+                    canAll: 3
+                },
+                desc: "Create new users_calendars connection (add user to calendar) where invalid value was used in permissions attribute",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    userId: "65e10aa11a001",
+                    calId: "673a1f8b2c4d1",
+                    canDelete: 1
+                },
+                desc: "Edit users_calendars connection permissions",
+                expected: 200
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    userId: "65e10aa11a001",
+                    calId: "673a1f8b2c4d4",
+                    canAll: 1
+                },
+                desc: "Edit users_calendars connection permissions where connection does not exist",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    userId: "65e10aa11a001",
+                    canAll: 1
+                },
+                desc: "Edit users_calendars connection permissions with invalid request body",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    userId: "fakeId",
+                    calId: "673a1f8b2c4d1",
+                    canAll: 1
+                },
+                desc: "Edit users_calendars connection permissions with invalid userId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    userId: "65e10aa11a001",
+                    calId: "fakeId",
+                    canAll: 1
+                },
+                desc: "Edit users_calendars connection permissions with invalid calId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    userId: "65e10aa11a001",
+                    calId: "673a1f8b2c4d1"
+                },
+                desc: "Delete users_calendars connection",
+                expected: 200
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    userId: "65e10aa11a001",
+                },
+                desc: "Delete users_calendars connection with invalid request body",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    userId: "fakeId",
+                    calId: "673a1f8b2c4d1"
+                },
+                desc: "Delete users_calendars connection with invalid userId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    userId: "65e10aa11a001",
+                    calId: "fakeId"
+                },
+                desc: "Delete users_calendars connection with invalid calId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    userId: "65e10aa11a001",
+                    calId: "673a1f8b2c4d6"
+                },
+                desc: "Delete users_calendars connection where connection does not exist",
+                expected: 404
+            }
+        ],
+
+        events: [
+
+        ],
+
+        users_events: [
+
+        ],
+
+        users_users: [
+
+        ],
+
+        cal_msgs: [
+
+        ],
+
+        priv_msgs: [
+
+        ]
+    }
+}
+
+test.runAll();

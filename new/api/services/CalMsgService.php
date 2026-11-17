@@ -2,12 +2,12 @@
 
 require_once __DIR__ . "/../repository/DBAccess.php";
 
-class CalendarsMSGService
+class CalMsgService
 {
     /* ---- GET ---- */
     public static function getAll($input)
     {
-        $senderId = $input["senderId"] ?? null;
+        $senderId = $input["actor"] ?? null;
         $calId = $input["calId"] ?? null;
 
         if (!isset($calId)) {
@@ -67,11 +67,14 @@ class CalendarsMSGService
         }
 
         //Kontrollera om det är tillåtet att posta
-        $senderUC = UsersCalendarsService::getAllCalendarsByUserID($senderId);
+        $senderUC = UsersCalendarsService::getAllRelationsByUser($senderId);
 
         if($senderUC){
-            $usersRelation = array_filter($senderUC, fn($x) => $x["calId"] == $calId);
-            if($usersRelation["canPostMsg"] == 0){
+            $usersRelation = array_values(array_filter($senderUC, fn($x) => $x["calId"] == $calId));
+            if(empty($usersRelation)){
+                throw new Exception("User is not a member!");
+            }
+            if($usersRelation[0]["canPostMsg"] == 0 && $usersRelation[0]["canAll"] == 0){
                 throw new Exception("Forbidden");
             }
         }

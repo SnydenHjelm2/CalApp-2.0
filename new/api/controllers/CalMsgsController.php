@@ -1,21 +1,23 @@
 
 <?php
 
-require_once __DIR__ . "/../services/CalendarsMSGService.php";
-class CalendarsMSGController {
+require_once __DIR__ . "/../services/CalMsgService.php";
+require_once __DIR__ . "/response.php";
+class CalMsgsController {
 
 
     /* -- HANDLER -- */
     public static function handle($method, $input) {
+        error_log("method=" . $method . " input=" . json_encode($input) . " GET=" . json_encode($_GET));
 
         if ($method == "GET") {
 
-            if(!is_array($input) || !isset($input["calId"], $input["senderId"])) {
-                return Response::send("Missing Attributes", 400);
+            if(!is_array($input) || !isset($input["calId"], $input["actor"])) {
+                return Response::send(["error" => "Missing Attributes"], 400);
             }
 
             try {
-                $result = CalendarsMSGService::getAll($input);
+                $result = CalMsgService::getAll($input);
                 return Response::send($result, 200);
 
             } catch (Exception $exc) {
@@ -32,16 +34,17 @@ class CalendarsMSGController {
 
             try {
                  
-                $result = CalendarsMSGService::create($input);
+                $result = CalMsgService::create($input);
                 return Response::send($result, 201);
 
-            } catch (Exception $exc) {    
-                if ($exc->getMessage() == "Forbidden") {
+            } catch (Exception $exc) {
+                $err = $exc->getMessage();
+                if ($err == "Forbidden") {
 
-                    return Response::send($exc->getMessage(), 409);
+                    return Response::send(["error" => $err], 409);
                 }
                 else {
-                    return Response::send($exc->getMessage(), 404);
+                    return Response::send(["error" => $err], 404);
                 }
 
 
@@ -53,21 +56,21 @@ class CalendarsMSGController {
 
         if ($method == "PATCH") {
             
-            if(!is_array($input) || isset($input["id"], $input["userId"], $input["content"])) {
-                return Response::send("Missing Attributes", 400);
+            if(!is_array($input) || !isset($input["id"], $input["userId"], $input["content"])) {
+                return Response::send(["error" => "Missing Attributes"], 400);
             }
             try {
                 
-                $result = CalendarsMSGService::update($input);
+                $result = CalMsgService::update($input);
                 return Response::send($result, 200);
 
             } catch (Exception $exc) {
                 $err = $exc->getMessage();
 
                 if($err == "Forbidden"){
-                    return Response::send($err, 409);
+                    return Response::send(["error" => $err], 409);
                 }
-                return Response::send($exc, 404);
+                return Response::send(["error" => $err], 404);
                 
             }
 
@@ -76,20 +79,20 @@ class CalendarsMSGController {
         if ($method == "DELETE") {
             
             if(!is_array($input) || !isset($id, $userId)){
-                return Response::send("Missing Attributes", 400);
+                return Response::send(["error" => "Missing Attributes"], 400);
             }
 
             try {
                     
-                $result = CalendarsMSGService::delete($input);
+                $result = CalMsgService::delete($input);
                 return Response::send($result, 200);
 
             } catch (Exception $exc) {
                 $err = $exc->getMessage();
                 if($err == "Forbidden"){
-                    return Response::send($err, 409);
+                    return Response::send(["error" => $err], 409);
                 }
-                return Response::send($exc, 404);
+                return Response::send(["error" => $err], 404);
 
             }
         }

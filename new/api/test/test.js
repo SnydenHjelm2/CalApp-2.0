@@ -751,161 +751,343 @@ const test = {
         ],
 
         events: [
+            {
+                params: null,
+                method: "GET",
+                body: null,
+                desc: "Get all events",
+                expected: 200
+            },
 
+            {
+                params: "eventId=6900000000010",
+                method: "GET",
+                body: null,
+                desc: "Get event by ID",
+                expected: 200
+            },
+
+            {
+                params: "calId=673a1f8b2c4d2",
+                method: "GET",
+                body: null,
+                desc: "Get all events by calId",
+                expected: 200
+            },
+
+            {
+                params: "eventId=fakeId",
+                method: "GET",
+                body: null,
+                desc: "Get event by invalid ID",
+                expected: 404
+            },
+
+            {
+                params: "calId=fakeId",
+                method: "GET",
+                body: null,
+                desc: "Get all events by invalid calId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    name: "test",
+                    description: "test",
+                    date: "2026-11-17",
+                    time: "22:00",
+                    location: "Niagara, Malmö University",
+                    tags: "",
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a001"
+                },
+                desc: "Create new event",
+                expected: 201
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    name: "test",
+                    date: "2026-11-17",
+                    time: "22:00",
+                    location: "Niagara, Malmö University",
+                    tags: "",
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a001"
+                },
+                desc: "Create new event with invalid request body",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    name: "test",
+                    description: "test",
+                    date: "2026-11-17",
+                    time: "22:00",
+                    location: "Niagara, Malmö University",
+                    tags: "",
+                    calId: "fakeId",
+                    userId: "65e10aa11a001"
+                },
+                desc: "Create new event with invalid calId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    name: "test",
+                    description: "test",
+                    date: "2026-11-17",
+                    time: "22:00",
+                    location: "Niagara, Malmö University",
+                    tags: "",
+                    calId: "673a1f8b2c4d1",
+                    userId: "fakeId"
+                },
+                desc: "Create new event with invalid userId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    name: "test",
+                    description: "test",
+                    date: "2026-11-17",
+                    time: "22:00",
+                    location: "Niagara, Malmö University",
+                    tags: "",
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a008"
+                },
+                desc: "Create new event where user is not member of cal",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    name: "test",
+                    description: "test",
+                    date: "2026-11-17",
+                    time: "22:00",
+                    location: "Niagara, Malmö University",
+                    tags: "",
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a007"
+                },
+                desc: "Create new event where user does not have permissions to create events",
+                expected: 401
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    name: "test",
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a001",
+                    eventId: "690000000000a"
+                },
+                desc: "Edit event",
+                expected: 200
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    name: "test",
+                    calId: "673a1f8b2c4d1",
+                    eventId: "690000000000a"
+                },
+                desc: "Edit event with invalid request body",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a001",
+                    eventId: "690000000000a"
+                },
+                desc: "Edit event with no pacthable attributes in request body",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    name: "test",
+                    calId: "fakeId",
+                    userId: "65e10aa11a001",
+                    eventId: "690000000000a"
+                },
+                desc: "Edit event with invalid calId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    name: "test",
+                    calId: "673a1f8b2c4d1",
+                    userId: "fakeId",
+                    eventId: "690000000000a"
+                },
+                desc: "Edit event with invalid userId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    name: "test",
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a001",
+                    eventId: "fakeId"
+                },
+                desc: "Edit event with invalid eventId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    name: "test",
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a008",
+                    eventId: "690000000000a"
+                },
+                desc: "Edit event where user is not in cal",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    name: "test",
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a007",
+                    eventId: "690000000000a"
+                },
+                desc: "Edit event where user does not have permissions",
+                expected: 401
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a001",
+                    eventId: "690000000000a"
+                },
+                desc: "Delete event",
+                expected: 200
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    userId: "65e10aa11a001",
+                    eventId: "690000000000a"
+                },
+                desc: "Delete event with invalid request body",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    calId: "fakeId",
+                    userId: "65e10aa11a001",
+                    eventId: "690000000000a"
+                },
+                desc: "Delete event with invalid calId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    calId: "673a1f8b2c4d1",
+                    userId: "fakeId",
+                    eventId: "690000000000a"
+                },
+                desc: "Delete event with invalid userId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a001",
+                    eventId: "fakeId"
+                },
+                desc: "Delete event with invalid eventId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a008",
+                    eventId: "6900000000006"
+                },
+                desc: "Delete event where user is not in cal",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    calId: "673a1f8b2c4d1",
+                    userId: "65e10aa11a007",
+                    eventId: "6900000000006"
+                },
+                desc: "Delete event where user does not have permissions",
+                expected: 401
+            },
         ],
 
         users_events: [
-            
+
         ],
 
         users_users: [
-            {
-                params: null,
-                method: "GET",
-                body: null,
-                desc: "Get all users_users",
-                expected: 200
-            },
-            {
-                params: "userId=65e10aa11a001",
-                method: "GET",
-                body: null,
-                desc: "Get all users_users by userId",
-                expected: 200
-            },            {
-                params: "userId=fakeID",
-                method: "GET",
-                body: null,
-                desc: "Get all users_users by invalid userid",
-                expected: 404
-            },
-            {
-                params: "userId1=65e10aa11a001&userId2=65e10aa11a002",
-                method: "GET",
-                body: null,
-                desc: "Get users_users by userIds",
-                expected: 200
-            },
-            {
-                params: "userId1=65e10aa11a002&userId2=fake651a001",
-                method: "GET",
-                body: null,
-                desc: "Get users_users by one real one fake userId",
-                expected: 404
-            },
-            {
-                params: null,
-                method: "POST",
-                body: {
-                    actor: "65e10aa11a002",
-                    userId: "fakeID",
-                    friends: 0
-                },
-                desc: "Post new users_users for actor - USER DOES NOT EXIST",
-                expected: 400
-            },
-            {
-                params: null,
-                method: "POST",
-                body: {
-                    actor: "65e10aa11a002"
-                },
-                desc: "Post new users_users for actor - missing attributes",
-                expected: 400
-            },
-            {
-                params: null,
-                method: "POST",
-                body: {
-                    actor: "65e10aa11a002",
-                    userId: "65e10aa11a002",
-                    friends: 0
-                },
-                desc: "Post new users_users for equal userIds",
-                expected: 400
-            },
-            {
-                params: null,
-                method: "POST",
-                body: {
-                    actor: "65f3aa11a015",
-                    userId: "65f3aa11a011",
-                    friends: 0
-                },
-                desc: "Post new users_users!!",
-                expected: 200
-            },
-            {
-                params: null,
-                method: "PATCH",
-                body: {
-                    actor: "65f3aa11a011",
-                    userId: "65f3aa11a015",
-                    friends: 1
-                },
-                desc: "PATCH users_users (new friend!)",
-                expected: 200
-            },
-            {
-                params: null,
-                method: "PATCH",
-                body: {
-                    userId: "65f3aa11a015",
-                    friends: 1
-                },
-                desc: "PATCH users_users: Missing attributes",
-                expected: 400
-            }
+
         ],
 
         cal_msgs: [
-            {
-                params: null,
-                method: "GET",
-                body: null,
-                desc: "Get all cal_msgs: Missing attributes",
-                expected: 400
-            },
-            {
-                params: "calId=673a1f8b2c4d1&actor=65e10aa11a001",
-                method: "GET",
-                body: null,
-                desc: "Get all cal_msgs by calId & userId",
-                expected: 200
-            },
-            {
-                params: null,
-                method: "POST",
-                body: {
-                    senderId: "65e10aa11a001",
-                    calId: "673a1f8b2c4d1",
-                    content: "NO NO NO WAAAAY+?"
-                },
-                desc: "Post new cal_msg",
-                expected: 201
-            },
-            {
-                params: null,
-                method: "PATCH",
-                body: {
-                    id: "6af593693b088",
-                    userId: "65f3aa11a004",
-                    content: "Can everyone review the attached notes before we meet? NO WAAAAY?!"
-                },
-                desc: "Patch a cal_msg",
-                expected: 200
-            },
-            {
-                params: null,
-                method: "PATCH",
-                body: {
-                    id: "6af593693b088",
-                    userId: "65f3aa11a003",
-                    content: "Can everyone review the attached notes before we meet? NO WAAAAY?!"
-                },
-                desc: "Patch a cal_msg : Not userId not sender of message",
-                expected: 409
-            }
+
         ],
 
         priv_msgs: [

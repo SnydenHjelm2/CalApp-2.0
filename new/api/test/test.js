@@ -1087,10 +1087,57 @@ const test = {
         ],
 
         cal_msgs: [
-
+            {   
+                params: null,
+                method: "GET",
+                body: null,
+                desc: "Get all cal_msgs: Missing attributes",
+                expected: 400
+            },
+            {
+                params: "calId=673a1f8b2c4d1&actor=65e10aa11a001",
+                method: "GET",
+                body: null,
+                desc: "Get all cal_msgs by calId & userId",
+                expected: 200
+            },
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    senderId: "65e10aa11a001",
+                    calId: "673a1f8b2c4d1",
+                    content: "NO NO NO WAAAAY+?"
+                },
+                desc: "Post new cal_msg",
+                expected: 201
+            },
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    id: "6af593693b088",
+                    userId: "65f3aa11a004",
+                    content: "Can everyone review the attached notes before we meet? NO WAAAAY?!"
+                },
+                desc: "Patch a cal_msg",
+                expected: 200
+            },
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    id: "6af593693b088",
+                    userId: "65f3aa11a003",
+                    content: "Can everyone review the attached notes before we meet? NO WAAAAY?!"
+                },
+                desc: "Patch a cal_msg : Not userId not sender of message",
+                expected: 409
+            }
         ],
 
         priv_msgs: [
+            
 
         ]
     }

@@ -1234,6 +1234,13 @@ const test = {
         ],
 
         priv_msgs: [
+            {
+                params: "userId=65e10aa11a001",
+                method: "GET",
+                body: null,
+                desc: "GET all private messages by userId",
+                expected: 200
+            }
             
 
         ]

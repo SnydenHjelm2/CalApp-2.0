@@ -1,8 +1,9 @@
 <?php
-    require_once __DIR__ . "/../services/PrivMsgsService.php";
+    require_once __DIR__ . "/../services/PrivMsgService.php";
     require_once __DIR__ . "/response.php";
     class PrivMsgsController {
         public static function handle($method, $input) {
+                    error_log("method=" . $method . " input=" . json_encode($input) . " GET=" . json_encode($_GET));
             if($method === "GET") {
                 try {
                     $userId = $input["userId"] ?? null;

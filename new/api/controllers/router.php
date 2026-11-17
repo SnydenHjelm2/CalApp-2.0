@@ -12,6 +12,7 @@ require_once __DIR__ . "/UsersCalendarsController.php";
 require_once __DIR__ . "/CalendarsController.php";
 require_once __DIR__ . "/UsersUsersController.php";
 require_once __DIR__ . "/CalMsgsController.php";
+require_once __DIR__ . "/PrivMsgsController.php";
 
 function Router($requestUrl = null){
     CorsMiddleware::handle();
@@ -57,7 +58,7 @@ function Router($requestUrl = null){
             break;
 
         case "priv_msgs":
-
+            PrivMsgsController::handle($method, $input);
             break;
 
         case "users":

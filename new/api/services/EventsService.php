@@ -1,6 +1,8 @@
 <?php
 
 require_once __DIR__ . "/../repository/DBAccess.php";
+require_once __DIR__ . "/UsersCalendarsService.php";
+require_once __DIR__ . "/UsersEventsService.php";
 
 class EventsService {
     //GET-metoder
@@ -22,6 +24,9 @@ class EventsService {
 
     public static function getEventsCal($cal) {
         $db = new DBAccess("events");
+        $calsDb = new DBAccess("calendars");
+        if (!$calsDb->findById($cal)) throw new Exception("Calendar not found");
+
         $events = $db->getAll();
         $eventsByCal = array_values(array_filter($events, fn($x) => $x["calId"] === $cal));
         return $eventsByCal;
@@ -39,13 +44,20 @@ class EventsService {
         $calId = $input["calId"];
         $userId = $input["userId"]; //För check om behörighet
 
-        //Använda CalendarService istället? 
         $cals = new DBAccess("calendars");
-        $allCals = $cals->getAll();
-        $cal = array_find($allCals, fn($x) => $x["id"] === $calId);
-        //Här skall även userId behandlas, kolla om user finns
-        if (!$cal) {
-            throw new Exception("Cal not found");
+        $cal = $cals->findById($calId);
+        $users = new DBAccess("users");
+        $user = $users->findById($userId);
+        if (!$cal) throw new Exception("Cal not found");
+        if (!$user) throw new Exception("User not found");
+
+        $connections = UsersCalendarsService::getAllRelationsByUser($user["id"]);
+        $connection = array_find($connections, fn($x) => $x["calId"] === $cal["id"]);
+
+        if (!$connection) throw new Exception("User not in cal");
+
+        if ($connection["canAddEvent"] === 0 && $connection["canAll"] === 0) {
+            throw new Exception("Unauthorized");
         }
 
         if ($tags === null) $tags = "";
@@ -55,9 +67,9 @@ class EventsService {
         $newEvent = [
             "id" => uniqid(),
             "name" => $name,
+            "description" => $desc,
             "date" => $date,
             "time" => $time,
-            "description" => $desc,
             "location" => $location,
             "tags" => $tags,
             "calId" => $calId
@@ -81,11 +93,20 @@ class EventsService {
 
         $events = new DBAccess("events");
         $cals = new DBAccess("calendars");
+        $users = new DBAccess("users");
         $event = $events->findById($eventId);
         $cal = $cals->findById($calId);
+        $user = $users->findById($userId);
 
-        if (!$event || !$cal) {
-            throw new Exception("Not found");
+        if (!$event || !$cal || !$user) throw new Exception("Not found");
+
+        $connections = UsersCalendarsService::getAllRelationsByUser($user["id"]);
+        $connection = array_find($connections, fn($x) => $x["calId"] === $cal["id"]);
+
+        if (!$connection) throw new Exception("User not in cal");
+
+        if ($connection["canAddEvent"] === 0 && $connection["canAll"] === 0) {
+            throw new Exception("Unauthorized");
         }
 
         $patchAttributes = [
@@ -115,11 +136,22 @@ class EventsService {
         
         $events = new DBAccess("events");
         $cals = new DBAccess("calendars");
+        $users = new DBAccess("users");
         $event = $events->findById($eventId);
         $cal = $cals->findById($calId);
+        $user = $users->findById($userId);
 
-        if (!$event || !$cal) {
+        if (!$event || !$cal || !$user) {
             throw new Exception("Not found");
+        }
+
+        $connections = UsersCalendarsService::getAllRelationsByUser($user["id"]);
+        $connection = array_find($connections, fn($x) => $x["calId"] === $cal["id"]);
+
+        if (!$connection) throw new Exception("User not in cal");
+
+        if ($connection["canRemoveEvent"] === 0 && $connection["canAll"] === 0) {
+            throw new Exception("Unauthorized");
         }
 
         $events->deleteData($eventId);

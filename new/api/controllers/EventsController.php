@@ -27,8 +27,8 @@ class EventsController {
                 }
             } catch (Exception $e) {
                 $msg = $e->getMessage();
-                if ($msg === "Event not found" || $msg === "No events found") {
-                    Response::send(["error" => "No event(s) found"], 404);
+                if ($msg === "Event not found" || $msg === "No events found" || $msg === "Calendar not found") {
+                    Response::send(["error" => $msg], 404);
                 } else {
                     Response::send(["error" => $msg], 400);
                 }
@@ -51,14 +51,14 @@ class EventsController {
                 return;
             } catch (Exception $e) {
                 $msg = $e->getMessage();
-                if ($msg === "Missing attributes") {
+                if ($msg === "Missing attributes" || $msg === "User not in cal") {
                     Response::send(["error" => $e->getMessage()], 400);
                     return;
-                } else if ($msg === "Cal not found") {
+                } else if ($msg === "Cal not found" || $msg === "User not found") {
                     Response::send(["error" => $e->getMessage()], 404);
                     return;
                 } else if ($msg === "Unauthorized") {
-                    Response::send(["error" => $e->getMessage()], 403);
+                    Response::send(["error" => $e->getMessage()], 401);
                     return;
                 }
             }
@@ -88,8 +88,8 @@ class EventsController {
                 if ($msg === "Missing attributes") {
                     Response::send(["error" => $e->getMessage()], 400);
                     return;
-                } else if ($msg === "Unautorized") {
-                    Response::send(["error" => $e->getMessage()], 403);
+                } else if ($msg === "Unauthorized") {
+                    Response::send(["error" => $e->getMessage()], 401);
                     return;
                 } else if ($msg === "Not found") {
                     Response::send(["error" => $e->getMessage()], 404);
@@ -114,11 +114,14 @@ class EventsController {
                 if ($msg === "Missing attributes") {
                     Response::send(["error" => $e->getMessage()], 400);
                     return;
-                } else if ($msg === "Unautorized") {
-                    Response::send(["error" => $e->getMessage()], 403);
+                } else if ($msg === "Unauthorized") {
+                    Response::send(["error" => $e->getMessage()], 401);
                     return;
                 } else if ($msg === "Not found") {
                     Response::send(["error" => $e->getMessage()], 404);
+                    return;
+                } else {
+                    Response::send(["error" => $e->getMessage()], 400);
                     return;
                 }
             }

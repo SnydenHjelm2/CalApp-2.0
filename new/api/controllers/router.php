@@ -10,6 +10,7 @@ require_once __DIR__ . "/UsersController.php";
 require_once __DIR__ . "/EventsController.php";
 require_once __DIR__ . "/UsersCalendarsController.php";
 require_once __DIR__ . "/CalendarsController.php";
+require_once __DIR__ . "/UsersUsersController.php";
 
 function Router($requestUrl = null){
     CorsMiddleware::handle();
@@ -71,7 +72,7 @@ function Router($requestUrl = null){
             break;
 
         case "users_users":
-
+            UsersUsersController::handle($method, $input);
             break;
 
         default:

@@ -1083,6 +1083,103 @@ const test = {
         ],
 
         users_users: [
+            {
+                params: null,
+                method: "GET",
+                body: null,
+                desc: "Get all users_users",
+                expected: 200
+            },
+            {
+                params: "userId=65e10aa11a001",
+                method: "GET",
+                body: null,
+                desc: "Get all users_users by userId",
+                expected: 200
+            },            {
+                params: "userId=fakeID",
+                method: "GET",
+                body: null,
+                desc: "Get all users_users by invalid userid",
+                expected: 404
+            },
+            {
+                params: "userId1=65e10aa11a001&userId2=65e10aa11a002",
+                method: "GET",
+                body: null,
+                desc: "Get users_users by userIds",
+                expected: 200
+            },
+            {
+                params: "userId1=65e10aa11a002&userId2=fake651a001",
+                method: "GET",
+                body: null,
+                desc: "Get users_users by one real one fake userId",
+                expected: 404
+            },
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    actor: "65e10aa11a002",
+                    userId: "fakeID",
+                    friends: 0
+                },
+                desc: "Post new users_users for actor - USER DOES NOT EXIST",
+                expected: 400
+            },
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    actor: "65e10aa11a002"
+                },
+                desc: "Post new users_users for actor - missing attributes",
+                expected: 400
+            },
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    actor: "65e10aa11a002",
+                    userId: "65e10aa11a002",
+                    friends: 0
+                },
+                desc: "Post new users_users for equal userIds",
+                expected: 400
+            },
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    actor: "65f3aa11a015",
+                    userId: "65f3aa11a011",
+                    friends: 0
+                },
+                desc: "Post new users_users!!",
+                expected: 200
+            },
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    actor: "65f3aa11a011",
+                    userId: "65f3aa11a015",
+                    friends: 1
+                },
+                desc: "PATCH users_users (new friend!)",
+                expected: 200
+            },
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    userId: "65f3aa11a015",
+                    friends: 1
+                },
+                desc: "PATCH users_users: Missing attributes",
+                expected: 400
+            }
 
         ],
 

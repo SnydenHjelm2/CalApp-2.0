@@ -76,11 +76,11 @@ const test = {
             }
 
             await this.resetDb(endpoint);
+            let allTests = document.querySelectorAll(".test");
+            let allSuccess = document.querySelectorAll(".success");
+            document.querySelector("h3").textContent = `Succeeded tests: ${allSuccess.length}/${allTests.length}`;
         }
 
-        let allTests = document.querySelectorAll(".test");
-        let allSuccess = document.querySelectorAll(".success");
-        document.querySelector("h3").textContent = `Succeeded tests: ${allSuccess.length}/${allTests.length}`;
     },
 
     tests: {
@@ -1079,7 +1079,236 @@ const test = {
         ],
 
         users_events: [
+            {
+                params: null,
+                method: "GET",
+                body: null,
+                desc: "Get all users_events connections",
+                expected: 200
+            },
 
+            {
+                params: "userId=65e10aa11a002",
+                method: "GET",
+                body: null,
+                desc: "Get all users_events connections by userId",
+                expected: 200
+            },
+
+            {
+                params: "eventId=6900000000010",
+                method: "GET",
+                body: null,
+                desc: "Get all users_events connections by eventId",
+                expected: 200
+            },
+
+            {
+                params: "eventId=6900000000010&userId=65e10aa11a002",
+                method: "GET",
+                body: null,
+                desc: "Get specific users_events connections by eventId and userId",
+                expected: 200
+            },
+
+            {
+                params: "id=6af5a80f6825f",
+                method: "GET",
+                body: null,
+                desc: "Get specific users_events connections by ID",
+                expected: 200
+            },
+
+            {
+                params: "id=fakeId",
+                method: "GET",
+                body: null,
+                desc: "Get specific users_events connections by invalid ID",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    userId: "65e10aa11a001",
+                    eventId: "6900000000010",
+                    isCreator: 0
+                },
+                desc: "Create new users_events connection",
+                expected: 201
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    userId: "65e10aa11a001",
+                    isCreator: 0
+                },
+                desc: "Create new users_events connection with invalid request body",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    userId: "65e10aa11a001",
+                    eventId: "fakeId",
+                    isCreator: 0
+                },
+                desc: "Create new users_events connection with invalid eventId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    userId: "65e10aa11a001",
+                    eventId: "6900000000010",
+                    isCreator: 0
+                },
+                desc: "Create new users_events connection where connection already exists",
+                expected: 409
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    userId: "65e10aa11a001",
+                    eventId: "690000000002b",
+                    isCreator: 0
+                },
+                desc: "Create new users_events connection where calendar is private and user is not member of calendar",
+                expected: 401
+            },
+
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    userId: "65e10aa11a001",
+                    eventId: "690000000000a",
+                    isCreator: "test"
+                },
+                desc: "Create new users_events connection with invalid type of isCreator attribute",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    userId: "65e10aa11a001",
+                    eventId: "690000000008c",
+                    isComing: 1
+                },
+                desc: "Edit users_events connection",
+                expected: 200
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    eventId: "6900000000010",
+                    isComing: 1
+                },
+                desc: "Edit users_events connection with invalid request body",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    userId: "65e10aa11a001",
+                    eventId: "fakeId",
+                    isComing: 1
+                },
+                desc: "Edit users_events connection with invalid eventId",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    userId: "65e10aa11a008",
+                    eventId: "690000000008c",
+                    isComing: 1
+                },
+                desc: "Edit users_events connection where connection does not exist",
+                expected: 404
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    userId: "65e10aa11a001",
+                    eventId: "690000000008c",
+                    isComing: "test"
+                },
+                desc: "Edit users_events connection with invalid type of isComing, isNotComing, isInterested attributes",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    userId: "65e10aa11a001",
+                    eventId: "690000000008c",
+                    isComing: 3
+                },
+                desc: "Edit users_events connection with invalid value of isComing, isNotComing, isInterested attributes",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    userId: "65e10aa11a001",
+                    eventId: "690000000008c",
+                },
+                desc: "Delete connection by userId and eventId",
+                expected: 200
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    id: "6af5a80f682df"
+                },
+                desc: "Delete connection by ID",
+                expected: 200
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    userId: "65e10aa11a001",
+                },
+                desc: "Delete connection with invalid request body",
+                expected: 400
+            },
+
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    id: "fakeId"
+                },
+                desc: "Delete connection with invalid ID",
+                expected: 404
+            },
         ],
 
         users_users: [
@@ -1490,7 +1719,6 @@ const test = {
                 desc: "DELETE private message: FakeId",
                 expected: 404
             }
-            
         ]
     }
 }

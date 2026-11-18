@@ -10,9 +10,10 @@ class UsersEventsController {
                 case "GET":
                     $userId = $input["userId"] ?? null;
                     $eventId = $input["eventId"] ?? null;
+                    $id = $input["id"] ?? null;
 
-                    if ($userId || $eventId) {
-                        $result = UsersEventsService::params($userId, $eventId);
+                    if ($userId || $eventId || $id) {
+                        $result = UsersEventsService::params($userId, $eventId, $id);
                         Response::send($result, 200);
                     } else {
                         $result = UsersEventsService::all();
@@ -55,9 +56,12 @@ class UsersEventsController {
                 case "DELETE":
                     $userId = $input["userId"] ?? null;
                     $eventId = $input["eventId"] ?? null;
+                    $id = $input["id"] ?? null;
 
                     if (!$userId || !$eventId) {
-                        throw new Exception("Missing attributes");
+                        if (!$id) {
+                            throw new Exception("Missing attributes");
+                        }
                     }
 
                     $result = UsersEventsService::DELETE($input);
@@ -76,7 +80,19 @@ class UsersEventsController {
                     $status = 400;
                     break;
 
+                case "User not in calendar : calendar private":
+                    $status = 401;
+                    break;
+
+                case "User does not have permissions":
+                    $status = 401;
+                    break;
+
                 case "Connection not found":
+                    $status = 404;
+                    break;
+                
+                case "Event not found":
                     $status = 404;
                     break;
 

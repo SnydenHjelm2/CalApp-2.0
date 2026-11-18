@@ -1,5 +1,5 @@
 # NOTE: REDUNDANT
-Note that the documentation in this file is currently redudant and not an accurate description of the API or how to launch the project. This documentation only applies to files in the OLD-CalApp directory
+Note that the documentation in this file is currently redudant and not an accurate description of the API or how to launch the project. This documentation only applies to files in the "OLD-CalApp" directory
 
 # PENTACal: Documentation
 Short description...

@@ -1211,6 +1211,36 @@ const test = {
             },
             {
                 params: null,
+                method: "POST",
+                body: {
+                    calId: "673a1f8b2c4d1",
+                    content: "NO NO NO WAAAAY+?"
+                },
+                desc: "Post new cal_msg: Missing Attributes: senderId",
+                expected: 400
+            },
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    senderId: "65e10aa11a001",
+                    content: "NO NO NO WAAAAY+?"
+                },
+                desc: "Post new cal_msg: Missing attributes: calId",
+                expected: 400
+            },
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    senderId: "65e10aa11a001",
+                    calId: "673a1f8b2c4d1"
+                },
+                desc: "Post new cal_msg: Missing attributes: content",
+                expected: 400
+            },
+            {
+                params: null,
                 method: "PATCH",
                 body: {
                     id: "6af593693b088",
@@ -1223,26 +1253,244 @@ const test = {
             {
                 params: null,
                 method: "PATCH",
+                body: null,
+                desc: "Patch a cal_msg: empty body",
+                expected: 400
+            },
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    userId: "65f3aa11a004",
+                    content: "Can everyone review the attached notes before we meet? NO WAAAAY?!"
+                },
+                desc: "Patch a cal_msg: Missing attributes: id",
+                expected: 400
+            },
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    id: "6af593693b088",
+                    content: "Can everyone review the attached notes before we meet? NO WAAAAY?!"
+                },
+                desc: "Patch a cal_msg: Missing attributes: calId",
+                expected: 400
+            },
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    id: "6af593693b088",
+                    userId: "65f3aa11a004",
+                },
+                desc: "Patch a cal_msg: Missing attributes: content",
+                expected: 400
+            },
+            {
+                params: null,
+                method: "PATCH",
                 body: {
                     id: "6af593693b088",
                     userId: "65f3aa11a003",
                     content: "Can everyone review the attached notes before we meet? NO WAAAAY?!"
                 },
-                desc: "Patch a cal_msg : Not userId not sender of message",
+                desc: "Patch a cal_msg : userId not creator of message",
+                expected: 409
+            },
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    id: "6af593693b088",
+                    userId: "fakeId",
+                    content: "Can everyone review the attached notes before we meet? NO WAAAAY?!"
+                },
+                desc: "Patch a cal_msg : Fake userId",
+                expected: 409
+            },
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    id: "6af593693b088",
+                    userId: "65f3aa11a004"
+                },
+                desc: "DELETE message",
+                expected: 200
+            },
+            {
+                params: null,
+                method: "DELETE",
+                body: null,
+                desc: "DELETE message: Missing attributes: empty body",
+                expected: 400
+            },
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    id: "6af593693b088"
+                },
+                desc: "DELETE message: Missing attributes: userId",
+                expected: 400
+            },
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    userId: "65f3aa11a004"
+                },
+                desc: "DELETE message: Missing attributes: id",
+                expected: 400
+            },
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    id: "6af593693b086",
+                    userId: "fakeId"
+                },
+                desc: "DELETE message: Fake userId",
+                expected: 409
+            },
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    id: "6af593693b086",
+                    userId: "65f3aa11a004"
+                },
+                desc: "DELETE message: UserId not sender of message",
                 expected: 409
             }
         ],
 
         priv_msgs: [
             {
+                params: null,
+                method: "GET",
+                body: null,
+                desc: "GET all private messages",
+                expected: 200
+            },
+            {
                 params: "userId=65e10aa11a001",
                 method: "GET",
                 body: null,
                 desc: "GET all private messages by userId",
                 expected: 200
+            },
+            {
+                params: "userId=FakeId",
+                method: "GET",
+                body: null,
+                desc: "GET all private messages by fakeId",
+                expected: 404
+            },
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    userId: "65e10aa11a001",
+                    receiverId: "65e10aa11a004",
+                    content: "HELLOOOOO"
+                },
+                desc: "POST new private message",
+                expected: 200
+            },
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    userId: "65e10aa11a001",
+                    content: "HELLOOOOO"
+                },
+                desc: "POST new private message: Missing attributes",
+                expected: 400
+            },
+            {
+                params: null,
+                method: "POST",
+                body: {
+                    userId: "65e10aa11a004",
+                    receiverId: "fakeID",
+                    content: "HELLOOOOO"
+                },
+                desc: "POST new private message: fake senderId",
+                expected: 404
+            },
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    privMsgId: "6af5951052317",
+                    content: "Sorry, I repeated myself"
+                },
+                desc: "PATCH private message",
+                expected: 200
+            },
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    privMsgId: "fakeId",
+                    content: "Sorry, I repeated myself"
+                },
+                desc: "PATCH private message: fake messageId",
+                expected: 404
+            },
+            {
+                params: null,
+                method: "PATCH",
+                body: null,
+                desc: "PATCH private message: Missing attributes",
+                expected: 400
+            },
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    privMsgId: "6af5951052317"
+                },
+                desc: "PATCH private message: Missing attributes: content",
+                expected: 400
+            },
+            {
+                params: null,
+                method: "PATCH",
+                body: {
+                    content: "Sorry, I repeated myself"
+                },
+                desc: "PATCH private message: Missing attributes: privMsgId",
+                expected: 400
+            },
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    privMsgId: "6af5951052317"
+                },
+                desc: "DELETE private message",
+                expected: 200
+            },
+            {
+                params: null,
+                method: "DELETE",
+                body: null,
+                desc: "DELETE private message: missing body",
+                expected: 400
+            },
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    privMsgId: "fakeMsgId"
+                },
+                desc: "DELETE private message: FakeId",
+                expected: 404
             }
             
-
         ]
     }
 }

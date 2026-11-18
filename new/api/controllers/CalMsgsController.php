@@ -78,7 +78,7 @@ class CalMsgsController {
 
         if ($method == "DELETE") {
             
-            if(!is_array($input) || !isset($id, $userId)){
+            if(!is_array($input) || !isset($input["id"], $input["userId"])){
                 return Response::send(["error" => "Missing Attributes"], 400);
             }
 

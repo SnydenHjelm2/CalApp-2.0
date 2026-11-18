@@ -26,7 +26,7 @@
                     if(!$userId || !$receiverId || !$content) {
                         return Response::send(["error" => "Bad request"], 400);
                     } else {
-                        return Response::send(PrivMsgService::createNewPrivMsg($input));
+                        return Response::send(PrivMsgService::createNewPrivMsg($input), 200);
                     }
                 } catch (Exception $exc) {
                     //Kontrollera
@@ -35,12 +35,12 @@
             }
             if($method === "PATCH") {
                 try {
-                    $privMsgId = $input["privMsgId"];
-                    $content = $input["content"];
+                    $privMsgId = $input["privMsgId"] ?? null;
+                    $content = $input["content"] ?? null;
                     if (!$privMsgId || !$content) {
                         return Response::send(["error" => "Bad request"], 400);
                     } else {
-                        return Response::send(PrivMsgService::changePrivMsg($input));
+                        return Response::send(PrivMsgService::changePrivMsg($input), 200);
                     }
                 } catch (Exception $exc) {
                     // Kontrollera
@@ -53,7 +53,7 @@
                 try {
                     if(isset($input["privMsgId"])){
                         //Borde kanske lägga till om det är ens egna meddelande...
-                        return Response::send(PrivMsgService::deletePrivMsg($input["privMsgId"]));
+                        return Response::send(PrivMsgService::deletePrivMsg($input["privMsgId"]),200);
                     } else {
                         return Response::send(["error" => "Bad request"], 400);
                     }

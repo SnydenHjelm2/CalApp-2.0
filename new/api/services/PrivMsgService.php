@@ -21,8 +21,8 @@
 
         public static function createNewPrivMsg($input) {
             $db = new DBAccess("users");
-            $result = $db->findById($input["receiverId"]);
-            if($result === null) {
+            $receiverExisting = $db->findById($input["receiverId"]);
+            if($receiverExisting === null) {
                 throw new Exception("The receiver doesn't exist");
             } else {
                 $db = new DBAccess("priv_msgs");

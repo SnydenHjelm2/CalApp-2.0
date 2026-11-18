@@ -32,7 +32,7 @@ class UsersUsersService {
         }
 
         $items = self::getAll();
-        $result = array_filter($items, fn($x) => ($x["user1Id"] == $userId1 && $x["user2Id"] == $userId2) || ($x["user2Id"] == $userId1 && $x["user1Id"] == $userId2));
+        $result = array_values(array_filter($items, fn($x) => ($x["user1Id"] == $userId1 && $x["user2Id"] == $userId2) || ($x["user2Id"] == $userId1 && $x["user1Id"] == $userId2)));
         if (empty($result)) {
             throw new Exception("No relation found");
         } else {
@@ -117,7 +117,27 @@ class UsersUsersService {
     }
 
     public static function delete($input) {
+        $db = new DBAccess("users_users");
+        if(isset($input["id"])){
+            $existing = $db->findById($input["id"]);
+            if ($existing == null){
+                throw new Exception("Users_Users id invalid");
+            }
+            else{
+                //borde använda $input["userUserId"]?
+                return $db->deleteData($existing["id"]);
+            }
+        } else if(isset($input["user1Id"], $input["user2Id"])){
+            $user1Id = $input["user1Id"];
+            $user2Id = $input["user2Id"];
 
+            $existing = self::getRelationOfUsers($user1Id, $user2Id);
+            if($existing == null){
+                throw new Exception("Users relation does not exist");
+            }
+                return $db->deleteData($existing[0]["id"]);
+        }
+        throw new Exception("Something wrong");
     }
 }
 

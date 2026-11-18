@@ -1179,6 +1179,52 @@ const test = {
                 },
                 desc: "PATCH users_users: Missing attributes",
                 expected: 400
+            },
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    user1Id: "65f3aa11a015",
+                    user2Id: "65e10aa11a001"
+                },
+                desc: "DELETE users_users: userIds",
+                expected: 200
+            },
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    id: "6af5a7ee0d25f"
+                },
+                desc: "DELETE users_users: id",
+                expected: 200
+            },
+            {
+                params: null,
+                method: "DELETE",
+                body: null,
+                desc: "DELETE users_users: empty body",
+                expected: 400
+            },
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    id: "DOESNOTEXIST"
+
+                },
+                desc: "DELETE users_users: id does not exist",
+                expected: 400
+            },
+            {
+                params: null,
+                method: "DELETE",
+                body: {
+                    user1Id: "65f3aa11a015",
+                    user2Id: "BLABLABLA"
+                },
+                desc: "DELETE users_users: one userId does not exist",
+                expected: 400
             }
 
         ],

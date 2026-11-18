@@ -82,7 +82,27 @@
             }
             if($method == "DELETE") {
                 //Här deletar vi bara vi har 2 id:n, säkert dålig idé menmen
+                try{
+                    if(empty($input)) {
+                        return Response::send(["error" => "Bad request"], 400);
+                    }
+                    $user1Id = $input["user1Id"] ?? null; 
+                    $user2Id = $input["user2Id"] ?? null;
+                    $userUserId = $input["id"] ?? null;
+
+                    if(($user1Id && $user2Id) || $userUserId){
+                        return Response::send(UsersUsersService::delete($input),200);
+                    } else {
+                        return Response::send(["error" => "Bad request"], 400);
+                    }
+                    
+                    return Response::send(UsersUsersService::delete($user1Id, $user2Id), 200);
+
+                } catch(Exception $exc) {
+                    return Response::send(["error" => $exc->getMessage()], 400);
+                }
             }
+            
         }
     }
 

@@ -84,10 +84,8 @@
                             http_response_code(403);
                             echo json_encode($result);
                             return;
-                        } elseif(["message" => "User succesfully deleted"] ) {
-                            http_response_code(200);
-                            echo json_encode(["message" => "User succesfully deleted"]);
-                            return;
+                        } else {
+                            Response::send($result, 200);
                         }
                     } else {
                         http_response_code(400);

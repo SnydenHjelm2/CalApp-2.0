@@ -4,10 +4,10 @@ const state = {
         name: "",
         email: "",
         friends: [
-
+            //user objects..
         ],
         blocked: [
-
+            //user-objects...
         ]
     },
 
@@ -38,11 +38,11 @@ const state = {
 
     msgs: {
         cal_msgs: [
-
+            //msg-objects...
         ],
 
         priv_msgs: [
-            
+            //msg-objects...
         ]
     }
 }

@@ -3,13 +3,13 @@
 
     class PrivMsgService {
         public static function getAllPrivateMsg() {
-            $db = new DBAccess("private_msg");
+            $db = new DBAccess("priv_msgs");
             $result = $db->getAll();
             return $result;
         }
 
         public static function getAllPrivateMsgForUser($input) {
-            $db = getAllPrivateMsg();
+            $db = self::getAllPrivateMsg();
             $result = array_values(array_filter($db, fn($x) => $x["senderId"] == $input["userId"] || $x["receiverId"] ==$input["userId"]));
             if (empty($result)) {
                 throw new Exception("No messages found");
@@ -21,11 +21,11 @@
 
         public static function createNewPrivMsg($input) {
             $db = new DBAccess("users");
-            $result = $db->findById($input["receiverId"]);
-            if($result === null) {
+            $receiverExisting = $db->findById($input["receiverId"]);
+            if($receiverExisting === null) {
                 throw new Exception("The receiver doesn't exist");
             } else {
-                $db = new DBAccess("private_msg");
+                $db = new DBAccess("priv_msgs");
                 $newMsg = [
                     "id" => uniqid(),
                     "senderId" => $input["userId"],
@@ -41,7 +41,7 @@
             }
         }
         public static function changePrivMsg($input) {
-            $db = new DBAccess("private_msg");
+            $db = new DBAccess("priv_msgs");
             $result = $db->findById($input["privMsgId"]);
             if($result === null) {
                 throw new Exception("The message couldn't be found");
@@ -58,7 +58,7 @@
 
         }
         public static function deletePrivMsg($id) {
-            $db = new DBAccess("private_msg");
+            $db = new DBAccess("priv_msgs");
             $result = $db->findById($id);
             if($result === null) {
                 throw new Exception("The message couldn't be found");

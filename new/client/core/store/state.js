@@ -2,16 +2,14 @@ const state = {
     user: {
         userId: "",
         name: "",
-        email: "",
-        friends: [
-            //user objects..
-        ],
-        blocked: [
-            //user-objects...
-        ]
+        email: ""
     },
 
-    cals: [
+    users_users: [
+
+    ],
+
+    calendars: [
         // {
         //     "id": "673a1f8b2c4d1",
         //     "name": "Plan B",
@@ -20,6 +18,10 @@ const state = {
         //     "isDeleted": 0
         // },
         //...
+    ],
+
+    users_calendars: [
+
     ],
 
     events: [
@@ -36,13 +38,16 @@ const state = {
         //...
     ],
 
-    msgs: {
-        cal_msgs: [
-            //msg-objects...
-        ],
+    users_events: [
 
-        priv_msgs: [
-            //msg-objects...
-        ]
-    }
+    ],
+
+    cal_msgs: [
+        //msg-objects...
+    ],
+
+    priv_msgs: [
+        //msg-objects...
+    ]
+    
 }

@@ -19,17 +19,30 @@ class Store {
 
     // Expects: {key1: callback1, key2: callback2...}, supports multiple keys
     setState(newState, consoleLogIt = false) {
-
-        if (consoleLogIt) {
-            console.log("New store setState: ", newState);
-        }
-        
         // Reject invalid format
         if (typeof newState !== "object" || Array.isArray(newState)) {
             return false;
         }
 
-        this.lastState = this._state;
+        if (consoleLogIt) {
+            console.log("New store setState: ", newState);
+        }
+
+        this.lastState = this.getState();
+
+        for (let key in newState) {
+            if (!this._state[key]) {
+                delete newState[key];
+                continue;
+            }
+
+            if (key === "user") {
+                newState[key] = {...this._state[key], ...newState[key]};
+                continue;
+            }
+
+            newState[key] = [...this._state[key], ...newState[key]];
+        }
         this._state = Object.assign(this._state, newState);
 
         // Notify about state change per key
@@ -37,8 +50,12 @@ class Store {
             this.notify(keyName, newState[keyName]);
         }
 
-        return { ok: true };
+        if (consoleLogIt) {
+            console.log("Old state: ", this.lastState);
+            console.log("New state: ", this.getState());
+        }
 
+        return true;
     }
 
     set state(value) {

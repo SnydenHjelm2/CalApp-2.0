@@ -101,7 +101,7 @@ class Store {
             console.log("New store resetState");
         }
         
-        this._state = structuredClone(stateSchema);
+        this._state = structuredClone(state);
 
         // Notify about state change per key
         for (let keyName in this._state) {

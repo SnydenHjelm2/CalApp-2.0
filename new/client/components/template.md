@@ -1,3 +1,7 @@
+# COMPONENT TEMPLATE
+
+> Components in the app should follow this template
+
 ```js
 
 class Component extends HTMLElement {

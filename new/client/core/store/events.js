@@ -1,6 +1,7 @@
 export const EVENTS = {
     REQUEST: {
         SENT: "request::sent",
+        NETWORKERROR: "request::networkerror"
     },
 
     RESPONSE: {

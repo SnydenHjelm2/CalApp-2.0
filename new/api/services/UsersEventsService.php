@@ -139,7 +139,6 @@ class UsersEventsService {
         $exists = array_find($all, fn($x) => $x["userId"] === $userId && $x["eventId"] === $eventId);
         if (!$exists) throw new Exception("Connection not found");
 
-        $db->deleteData($exists["id"]);
-        return ["success" => "Connection deleted"];
+        return $db->deleteData($exists["id"]);
     }
 }

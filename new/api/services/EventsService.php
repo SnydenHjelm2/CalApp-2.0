@@ -154,8 +154,7 @@ class EventsService {
             throw new Exception("Unauthorized");
         }
 
-        $events->deleteData($eventId);
-        return ["success" => "Event deleted successfully"];
+        return $events->deleteData($eventId);
     } 
  }
 

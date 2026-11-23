@@ -176,10 +176,7 @@ class UsersCalendarsService {
         //     throw new Exception("Missing pemissions", 401);
         // }
 
-        $success = $dbUG->deleteData($exists["id"]);
-        if ($success){
-            return ["message" => "Deleted successfully!"];
-        }
+        return $dbUG->deleteData($exists["id"]);
     }
 
 

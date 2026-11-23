@@ -63,8 +63,7 @@
             if($result === null) {
                 throw new Exception("The message couldn't be found");
             } else {
-                $result = $db->deleteData($id);
-                return ["message" => "The message has succesfully deleted"];;
+                return $db->deleteData($id);
             }
         }
     }

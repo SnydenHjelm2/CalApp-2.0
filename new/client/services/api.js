@@ -1,6 +1,7 @@
 import { PubSub } from "../core/store/pubsub.js";
+import { EVENTS } from "../core/store/events.js";
 
-export const apiRequest = async (endpoint, method, body = null) => {
+export const apiRequest = async (endpoint, method = "GET", body = null) => {
     let options = {
         headers: {"Content-Type": "application/json"},
         method: method.toUpperCase()
@@ -9,25 +10,26 @@ export const apiRequest = async (endpoint, method, body = null) => {
 
     try {
         let req = new Request(`http://localhost:8000/${endpoint}`, options);
+        PubSub.publish(EVENTS.API.REQUEST.SENT, req);
         let resp = await fetch(req);
 
-        //PubSub.publish("request::sent");
+        let reso = await resp.json();
+
+        let obj = {
+            status: resp.status,
+            statusText: resp.statusText,
+            body: reso
+        }
 
         if (resp.ok) {
-            //PubSub.publish("response::received::success");
-            return {
-                success: true,
-                resource: await resp.json()
-            }
+            PubSub.publish(EVENTS.API.RESPONSE.RECEIVED.SUCCESS, obj);
         } else {
-            //PubSub.publish("response::received::failed");
-            return {
-                success: false,
-                resource: await resp.json()
-            }
+            PubSub.publish(EVENTS.API.RESPONSE.RECEIVED.FAILED, obj);
         }
+
+        return obj;
     } catch (e) {
-        //PubSub.publish("request::networkerror");
+        PubSub.publish(EVENTS.API.REQUEST.NETWORKERROR, e);
         return e.message;
     }
 }

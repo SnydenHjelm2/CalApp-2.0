@@ -2,7 +2,7 @@ export const EVENTS = {
     API: {
         REQUEST: {
             SENT: "api::request::sent",
-            NETWORKERROR: "api::request::networkerror"
+            NETWORK_ERROR: "api::request::networkerror"
         },
 
         RESPONSE: {
@@ -10,6 +10,32 @@ export const EVENTS = {
                 SUCCESS: "api::response::received::success",
                 FAILED: "api::response::received::failed"
             }
+        }
+    },
+    VIEW: {
+        HOME: "view::home",
+        CALS: "view::cals",
+        SEARCH: "view::search",
+        CHAT: "view::chat",
+        PROFILE: "view::profile"
+    },
+    SUBVIEW: {
+        CHAT: "subview::chat",
+        PEOPLE: "subview::people"
+
+    },
+    POPUP: {
+        OPEN: {
+            EVENT: "popup::open::event",
+            NEW_EVENT: "popup::open::newevent",
+            EDIT_EVENT: "popup::open::editevet",
+            CAL: "popup::open::cal"
+        },
+        CLOSE: {
+            EVENT: "popup::close::event",
+            NEW_EVENT: "popup::close::newevent",
+            EDIT_EVENT: "popup::close::editevent",
+            CAL: "popup::close::cal"
         }
     }
 }

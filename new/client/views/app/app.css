@@ -1,0 +1,31 @@
+:host {
+    --topbar-height: clamp(56px, 10dvh, 80px);
+    --nav-height: clamp(56px, 8dvh, 68px);
+    --nav-gap: 12px;
+
+    position: relative;           /* den svävande menyn placeras i förhållande till appen */
+    display: grid;
+    grid-template-rows: var(--topbar-height) minmax(0, 1fr);
+    height: 100dvh;               /* dvh = synlig höjd, även när mobilens adressfält är framme */
+    overflow: hidden;             /* appen scrollar inte, bara #outlet gör det */
+    background: #ffffff;
+}
+ 
+/* top-bar fyller sin rad. Appen äger storleken, komponenten äger utseendet. */
+ 
+#content {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    /* Luft längst ner så att sista innehållet går att nå ovanför den svävande menyn */
+    padding-bottom: calc(var(--nav-height) + var(--nav-gap) * 2 + env(safe-area-inset-bottom, 0px));
+}
+ 
+/* Svävar ovanpå innehållet. absolute tar den ur grid:en, så den tar ingen plats. */
+bottom-nav {
+    position: absolute;
+    left: var(--nav-gap);
+    right: var(--nav-gap);
+    bottom: calc(var(--nav-gap) + env(safe-area-inset-bottom, 0px));
+    height: var(--nav-height);
+    z-index: 10;
+}

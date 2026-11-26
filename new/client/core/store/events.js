@@ -1,13 +1,15 @@
 export const EVENTS = {
-    REQUEST: {
-        SENT: "request::sent",
-        NETWORKERROR: "request::networkerror"
-    },
+    API: {
+        REQUEST: {
+            SENT: "api::request::sent",
+            NETWORKERROR: "api::request::networkerror"
+        },
 
-    RESPONSE: {
-        RECEIVED: {
-            SUCCESS: "response::received::success",
-            FAILED: "response::received::failed"
+        RESPONSE: {
+            RECEIVED: {
+                SUCCESS: "api::response::received::success",
+                FAILED: "api::response::received::failed"
+            }
         }
     }
 }

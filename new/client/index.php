@@ -6,7 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <p>test</p>
     <script type="module" src="/index.js"></script>
 </body>
 </html>

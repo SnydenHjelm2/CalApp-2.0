@@ -16,6 +16,7 @@ export const apiRequest = async (endpoint, method = "GET", body = null) => {
         let reso = await resp.json();
 
         let obj = {
+            url: resp.url,
             status: resp.status,
             statusText: resp.statusText,
             body: reso

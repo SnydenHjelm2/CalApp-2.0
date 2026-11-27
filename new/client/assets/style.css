@@ -1,29 +1,20 @@
 @import './vars.css';
-button-with-text button{
-    
-    padding: 8px 16px;
+
+
+.btn-with-text {
+    appearance: none;
+    border: none;
+    font: var(--font-size-button) var(--font-family); 
+    font-weight: 600;
+    cursor: pointer;
+    padding: 4px 8px;
     border-radius: 25px;
     background-color: var(--accent-background-color);
     color: black;
     box-shadow: 0 2px 4px var(--shadow-color);
-    font: var(--font-size-button) var(--font-family);
-}
-button-with-text button:hover {
-    filter: brightness(1.08);
 }
 
-button-with-text button:active {
-    transform: translateY(1px);
-    box-shadow: 0 1px 2px var(--shadow-color);
-}
+.btn-with-text:hover { filter: brightness(1.08); }
+.btn-with-text:disabled { opacity: 0.5; cursor: not-allowed; }
 
-button-with-text button:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 2px;
-}
-
-button-with-text button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    box-shadow: none;
-}
+:host { display: inline-block; }

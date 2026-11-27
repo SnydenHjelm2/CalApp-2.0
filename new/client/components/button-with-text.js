@@ -10,8 +10,9 @@ export class ButtonWithText extends HTMLElement{
 
         //Use a separate CSS file, link it in the shadowRoots innerHTML
         this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="../vars.css">
-            <link rel="stylesheet" href="../assets/style.css">
+            <link rel="stylesheet" href="assets/style.css">
+
+
         `;
 
         this.render();
@@ -20,7 +21,6 @@ export class ButtonWithText extends HTMLElement{
     async create(resource, payload){
         try {
             let data = await apiRequest(resource, "POST", payload);
-
             PubSub.publish(EVENTS.API.RESPONSE.RECEIVED.SUCCESS, { action: "create", resource, data });
 
         }
@@ -32,8 +32,10 @@ export class ButtonWithText extends HTMLElement{
 
     render() {
         //Render HTML (via createElement)
-        let btn = this.shadowRoot.createElement("button");
-        btn.textContent = this.getAttribute("text");
+        let btn = document.createElement("button");
+        btn.textContent = this.getAttribute("text").toLocaleUpperCase();
+        btn.classList.add("btn-with-text");
+        this.shadowRoot.appendChild(btn);
     }
 
     sub() {
@@ -42,24 +44,28 @@ export class ButtonWithText extends HTMLElement{
     }
 
     connectedCallback() {
-        this.shadowRoot.addEventlistener("click", () => {
-            let type = this.getAttribute("type");
-            if(type === "create"){
-                this.create(this.getAttribute(url), this.getAttribute(payload));
+
+        this.shadowRoot.addEventListener("click", () => {
+            let action = this.dataset.action;
+    
+            if(action === "create"){
+                this.create(this.getAttribute("url"), this.getAttribute("payload"));
             }
 
-            if(type === "close"){
+            if(action === "close"){
                 //context = "NEW_EVENT" || "EVENT" || "EDIT EVENT" || CAL 
                 let context = this.getAttribute("context");
+                let event = this.dataset.event;
+                console.log(event);
 
-                PubSub.publish(EVENTS.POPUP.CLOSE[context])
+                PubSub.publish(event)
             }
 
-            if (type === "open"){
+            if (action === "open"){
                 //context bör se ut exakt som i events.js
                 //context = "NEW_EVENT" || "EVENT" || "EDIT_EVENT" || CAL 
                 let context = this.getAttribute("context");
-                PubSub.publish(EVENTS.POPUP.OPEN[context]);
+                PubSub.publish(data);
             }
         });
     }
@@ -75,10 +81,6 @@ export class ButtonWithText extends HTMLElement{
 }
 customElements.define("button-with-text", ButtonWithText);
 
-/*
-    POPUP::SHOW -> Create Calendar, Create Event
-    SUBMIT:: -> New Calendar, New Event, Update Calendar, Update event
-    POPUP::CLOSE -> 
-
-*/
+//Exempel på användning:
+//<button-with-text context="NEW_EVENT" text="close" data-action="close" data-event="popup::close::event"></button-with-text>
 

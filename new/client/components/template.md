@@ -23,7 +23,6 @@ class Component extends HTMLElement {
 
         //Use a separate CSS file, link it in the shadowRoots innerHTML
         this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="../vars.css">
             <link rel="stylesheet" href="/style.css">
         `;
 

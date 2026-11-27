@@ -16,10 +16,10 @@ export class LoginRegister extends HTMLElement {
         PubSub.subscribe(EVENTS.COMPONENT.LOGIN_REGISTER.NAVIGATE.LOGIN, (data) => {this.render(data)});
         PubSub.subscribe(EVENTS.COMPONENT.LOGIN_REGISTER.NAVIGATE.REGISTER, (data) => {this.render(data)});
         PubSub.subscribe(EVENTS.API.REQUEST.SENT, () => {
-            this.shadowRoot.querySelector(".status").textContent = "Please wait...";
+            this.shadowRoot.querySelector(".lr-status").textContent = "Please wait...";
         });
         PubSub.subscribe(EVENTS.API.REQUEST.NETWORK_ERROR, (data) => {
-            this.shadowRoot.querySelector(".status").textContent = "Something went wrong: " + data.message;
+            this.shadowRoot.querySelector(".lr-status").textContent = "Something went wrong: " + data.message;
         });
         PubSub.subscribe(EVENTS.API.RESPONSE.RECEIVED.SUCCESS, (data) => {
             if (data.method === "GET") {
@@ -29,7 +29,7 @@ export class LoginRegister extends HTMLElement {
             }
         });
         PubSub.subscribe(EVENTS.API.RESPONSE.RECEIVED.FAILED, (data) => {
-            this.shadowRoot.querySelector(".status").textContent = "Error: " + data.body.error;
+            this.shadowRoot.querySelector(".lr-status").textContent = "Error: " + data.body.error;
             console.log(data);
         });
     }
@@ -58,8 +58,8 @@ export class LoginRegister extends HTMLElement {
                 <input id="lr-email" type="text" placeholder="Email...">
                 <input id="lr-password" type="password" placeholder="Password...">
                 <button id="lr-register">Register</button>
-                <p class="status"></p>
-                <p class="switch">Already have an account? Log in here!</p>
+                <p class="lr-status"></p>
+                <p class="lr-switch">Already have an account? Log in here!</p>
             `;
             this.shadowRoot.querySelector(".switch").addEventListener("click", () => {
                 PubSub.publish(EVENTS.COMPONENT.LOGIN_REGISTER.NAVIGATE.LOGIN, "login");
@@ -81,8 +81,8 @@ export class LoginRegister extends HTMLElement {
                 <input id="lr-email" type="text" placeholder="Email...">
                 <input id="lr-password" type="password" placeholder="Password...">
                 <button id="lr-login">Log in</button>
-                <p class="status"></p>
-                <p class="switch">Don't have an account? Register today!</p>
+                <p class="lr-status"></p>
+                <p class="lr-switch">Don't have an account? Register today!</p>
             `;
             this.shadowRoot.querySelector(".switch").addEventListener("click", () => {
                 PubSub.publish(EVENTS.COMPONENT.LOGIN_REGISTER.NAVIGATE.REGISTER, "register");

@@ -1,11 +1,11 @@
-nav {
+:host {
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 100%;
     border-radius: 999px;
     background: rgb(255 255 255 / 0.85);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(4px);
     box-shadow: 0 6px 24px rgb(0 0 0 / 0.18);
 }
 
@@ -18,10 +18,11 @@ button {
     background: none;
     color: #6b7280;
     cursor: pointer;
+
 }
 
 /* Standardfärg på ikonen */
-nav button svg {
+:host button svg {
     width: 26px;
     height: 26px;
     color: #666;
@@ -29,6 +30,6 @@ nav button svg {
 }
 
 /* Färg när knappen har klassen .active */
-nav button.active svg {
-    color: #0066cc;
+:host button.active svg {
+    color: var(--active-color);
 }

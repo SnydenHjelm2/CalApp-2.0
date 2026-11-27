@@ -37,5 +37,12 @@ export const EVENTS = {
             EDIT_EVENT: "popup::close::editevent",
             CAL: "popup::close::cal"
         }
+    },
+    AUTH: {
+        LOGIN: {
+            SUCCESS: "login::success",
+            FAILED: "login::failed",
+            PENDING: "login::pending"
+        }
     }
 }

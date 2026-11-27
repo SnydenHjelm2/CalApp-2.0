@@ -1,6 +1,7 @@
 import { EVENTS } from "../../../core/store/events.js";
-import { Pubsub } from "../../../core/store/pubsub.js";
-import { ICONS } from "./icons.js";
+import { PubSub } from "../../../core/store/pubsub.js";
+import { store } from "../../../core/store/store.js";
+import { ICONS } from "../icons.js";
 
 
 export class BottomNav extends HTMLElement {
@@ -17,26 +18,23 @@ export class BottomNav extends HTMLElement {
 
     render() {
         this.shadowRoot.innerHTML = `
-                <link rel="stylesheet" href="../vars.css">
-                <link rel="stylesheet" href="/Nav.css">
+                <link rel="stylesheet" href="views/app/nav/BottomNav.css">
                 
-                <nav>
-                    ${Object.entries(EVENTS.VIEW).map(([key, eventName]) => `
-                        <button data-event="${eventName}">${ICONS[key]}</button>
-                    `).join("")}
-                </nav>
+                ${Object.entries(EVENTS.VIEW).map(([key, eventName]) => `
+                    <button data-event="${eventName}">${ICONS[key]}</button>
+                `).join("")}
             `;
     }
 
     sub() {
         Object.values(EVENTS.VIEW).forEach((eventName) => {
-            Pubsub.subscribe(eventName, () => {
+            PubSub.subscribe(eventName, () => {
                 this.setActiveButton(eventName);
             })
         })
     }
     pubevent(eventName, data = null) {
-        Pubsub.publish(eventName, data, true); // "view::home" etc
+        PubSub.publish(eventName, data, true); // "view::home" etc
     }
 
     connectedCallback() {
@@ -63,7 +61,6 @@ export class BottomNav extends HTMLElement {
     disconnectedCallback() {
         this.shadowRoot.removeEventListener("click", this.onclick);
     }
-
 
 }
 

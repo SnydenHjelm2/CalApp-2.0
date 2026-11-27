@@ -15,22 +15,8 @@ export class LoginRegister extends HTMLElement {
     sub() {
         PubSub.subscribe(EVENTS.COMPONENT.LOGIN_REGISTER.NAVIGATE.LOGIN, (data) => {this.render(data)});
         PubSub.subscribe(EVENTS.COMPONENT.LOGIN_REGISTER.NAVIGATE.REGISTER, (data) => {this.render(data)});
-        PubSub.subscribe(EVENTS.API.REQUEST.SENT, () => {
-            this.shadowRoot.querySelector(".lr-status").textContent = "Please wait...";
-        });
-        PubSub.subscribe(EVENTS.API.REQUEST.NETWORK_ERROR, (data) => {
-            this.shadowRoot.querySelector(".lr-status").textContent = "Something went wrong: " + data.message;
-        });
-        PubSub.subscribe(EVENTS.API.RESPONSE.RECEIVED.SUCCESS, (data) => {
-            if (data.method === "GET") {
-                //handle log-in success
-            } else if (data.method === "POST") {
-                //handle register success
-            }
-        });
-        PubSub.subscribe(EVENTS.API.RESPONSE.RECEIVED.FAILED, (data) => {
-            this.shadowRoot.querySelector(".lr-status").textContent = "Error: " + data.body.error;
-            console.log(data);
+        PubSub.subscribe(EVENTS.AUTH.REGISTER.START, async (data) => {
+            
         });
     }
 
@@ -61,7 +47,7 @@ export class LoginRegister extends HTMLElement {
                 <p class="lr-status"></p>
                 <p class="lr-switch">Already have an account? Log in here!</p>
             `;
-            this.shadowRoot.querySelector(".switch").addEventListener("click", () => {
+            this.shadowRoot.querySelector(".lr-switch").addEventListener("click", () => {
                 PubSub.publish(EVENTS.COMPONENT.LOGIN_REGISTER.NAVIGATE.LOGIN, "login");
             });
             this.shadowRoot.querySelector("#lr-register").addEventListener("click", async () => {
@@ -69,7 +55,7 @@ export class LoginRegister extends HTMLElement {
                 let email = this.shadowRoot.querySelector("#lr-email").value;
                 let pwd = this.shadowRoot.querySelector("#lr-password").value;
 
-                await apiRequest("users", "POST", {
+                PubSub.publish(EVENTS.AUTH.REGISTER.START, {
                     name: name,
                     email: email,
                     pwd: pwd
@@ -84,7 +70,7 @@ export class LoginRegister extends HTMLElement {
                 <p class="lr-status"></p>
                 <p class="lr-switch">Don't have an account? Register today!</p>
             `;
-            this.shadowRoot.querySelector(".switch").addEventListener("click", () => {
+            this.shadowRoot.querySelector(".lr-switch").addEventListener("click", () => {
                 PubSub.publish(EVENTS.COMPONENT.LOGIN_REGISTER.NAVIGATE.REGISTER, "register");
             });
             this.shadowRoot.querySelector("#lr-login").addEventListener("click", async () => {

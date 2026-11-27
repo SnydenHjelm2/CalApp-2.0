@@ -17,6 +17,12 @@
                         echo json_encode($result);
                         return;
                     }
+                } else if (isset($input["email"]) && isset($input["pwd"])) {
+                    $result = UsersService::getUserByEmailAndPwd($input["email"], $input["pwd"]);
+                    if (isset($result["error"])) http_response_code(400);
+                    else http_response_code(200);
+                    echo json_encode($result);
+                    return;
                 }
                 $result = UsersService::getAllUsers();
                 http_response_code(200);
@@ -24,7 +30,10 @@
                 return;
             }
             if($method === "POST") {
-                if(isset($input["name"]) && isset($input["email"]) && isset($input["pwd"])) {
+                $name = $input["name"] ?? null;
+                $pwd = $input["pwd"] ?? null;
+                $email = $input["email"] ?? null;
+                if($name && $pwd && $email) {
                     $result = UsersService::createNewUser($input); //new user
                     if(isset($result["error"])) {
                         http_response_code(409);

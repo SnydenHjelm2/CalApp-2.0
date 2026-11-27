@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/vars.css">
 </head>
 <body>
+    <app-root></app-root>
     <script type="module" src="/index.js"></script>
 </body>
 </html>

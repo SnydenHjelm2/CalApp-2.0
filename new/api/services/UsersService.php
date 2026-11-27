@@ -37,6 +37,15 @@
             
         }
 
+        public static function getUserByEmailAndPwd($email, $pwd) {
+            $db = new DBAccess("users");
+            $result = $db->findByEmail($email);
+            if (!$result) return ["error" => "Incorrect Email"];
+            if ($result["pwd"] !== $pwd) return ["error" => "Incorrect Password"];
+
+            return $result;
+        }
+
         public static function changeUser($id, $data) {
             $db = new DBAccess("users");
             $result = $db->findById($id);

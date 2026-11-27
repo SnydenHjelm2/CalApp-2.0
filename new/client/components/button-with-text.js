@@ -8,12 +8,10 @@ export class ButtonWithText extends HTMLElement{
         this.attachShadow({ mode: "open" });
         this.sub();
 
-        let cssPath = "style.css";
-
         //Use a separate CSS file, link it in the shadowRoots innerHTML
         this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="../vars.css">
-            <link rel="stylesheet" href="/style.css">
+            <link rel="stylesheet" href="../assets/style.css">
         `;
 
         this.render();
@@ -32,12 +30,9 @@ export class ButtonWithText extends HTMLElement{
         
     }
 
-
     render() {
         //Render HTML (via createElement)
-        let btn = this.shadowRoot.createElement("div");
-        btn.style.padding = "4px";
-        btn.style.borderRadius = "4px";
+        let btn = this.shadowRoot.createElement("button");
         btn.textContent = this.getAttribute("text");
     }
 
@@ -78,6 +73,7 @@ export class ButtonWithText extends HTMLElement{
         PubSub.publish("event::name");
     }
 }
+customElements.define("button-with-text", ButtonWithText);
 
 /*
     POPUP::SHOW -> Create Calendar, Create Event

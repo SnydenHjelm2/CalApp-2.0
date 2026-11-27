@@ -40,9 +40,16 @@ export const EVENTS = {
     },
     AUTH: {
         LOGIN: {
-            SUCCESS: "login::success",
-            FAILED: "login::failed",
-            PENDING: "login::pending"
+            SUCCESS: "auth::login::success",
+            FAILED: "auth::login::failed",
+            PENDING: "auth::login::pending",
+            START: "auth::login::start"
+        },
+        REGISTER: {
+            SUCCESS: "auth::register::success",
+            FAILED: "auth::register::failed",
+            PENDING: "auth::register::pending",
+            START: "auth::register::start",
         }
     },
     COMPONENT: {

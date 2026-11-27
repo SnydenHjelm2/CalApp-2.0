@@ -20,8 +20,10 @@ export class BottomNav extends HTMLElement {
         this.shadowRoot.innerHTML = `
                 <link rel="stylesheet" href="views/app/nav/BottomNav.css">
                 
-                ${Object.entries(EVENTS.VIEW).map(([key, eventName]) => `
-                    <button data-event="${eventName}">${ICONS[key]}</button>
+                ${Object.entries(EVENTS.VIEW).map(([key, eventName], index) => `
+                    <button data-event="${eventName}" class="${index === 0 ? "active" : ""}">
+                        ${ICONS[key]}
+                        </button>
                 `).join("")}
             `;
     }
@@ -51,7 +53,7 @@ export class BottomNav extends HTMLElement {
     //MARKERAR KNAPP SOM ÄR TRYCKT
     setActiveButton(activeEventName) {
         const buttons = this.shadowRoot.querySelectorAll("button[data-event]");
-
+        
         for (const butt of buttons) {
             const isActive = butt.dataset.event === activeEventName;
             butt.classList.toggle("active", isActive);
@@ -59,7 +61,6 @@ export class BottomNav extends HTMLElement {
     }
 
     disconnectedCallback() {
-        this.shadowRoot.removeEventListener("click", this.onclick);
     }
 
 }

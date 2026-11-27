@@ -1,8 +1,8 @@
 :host {
     position: relative;
     display: grid;
-  
-    grid-template-rows: 7% 1fr; 
+
+    grid-template-rows: 7% 1fr;
     height: 100dvh;
     overflow: hidden;
     background: var(--background-color);
@@ -13,7 +13,8 @@
 #content {
     overflow-y: auto;
     overscroll-behavior: contain;
-    padding-bottom: 84px;
+    /* padding-bottom: 84px; */
+    padding: 0 16px 84px 16px;
 }
 
 bottom-nav {

@@ -10,7 +10,6 @@ import { store } from "../../core/store/store.js";
     VIEW komponenten som visas måste ha <filter-bar> komponenten
     i sin innerHTML. Se även connectedCallBack
 */
-const filters = EVENTS.FILTER[activeView];
 
 
 export class FilterBar extends HTMLElement {
@@ -21,28 +20,48 @@ export class FilterBar extends HTMLElement {
 
 
         this.currentViewComponentTag = null;
+        this.filters = {};
         this.data = store.getState();
-        this.render();
     }
 
     render() {
-
+        this
         this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="views/app/app.css">
+            <link rel="stylesheet" href="/components/FilterBar/FilterBar.css">
 
-            <div class="filter-bar">
-                ${Object.entries(filters).map(([key, eventName]) => `
-                    <button data-event="${eventName}">
-                        ${key.toLocaleLowerCase}
+                ${Object.entries(this.filters).map(([key, eventName], index) => `
+                    <button data-event="${eventName}" class="${index === 0 ? "active" : ""}">
+                        ${key.toLocaleLowerCase()}
                     </button>
-                    `).join("")}
-            </div>
-            
+                `).join("")}
         `;
+
     }
 
+    connectedCallback() {
+        const activeView = this.getAttribute("filterGroup"); // Ex: SEARCH, filterGroup="SEARCH"
+        console.log(activeView);
+        this.setAttribute("class", "filter-bar");
+
+        this.filters = EVENTS.FILTER[activeView];
+        this.render();
+        this.sub();
+
+        this.shadowRoot.addEventListener("click", this.onClick);
+
+        const firstEvent = Object.values(this.filters)[0];
+        if (firstEvent) {
+            this.pubevent(firstEvent);
+        }
+    }
+    disconnectedCallback() {
+        this.shadowRoot.removeEventListener("click", this.onClick);
+
+    }
+
+
     sub() {
-        for (const [eventName, filter] of Object.entries(filters)) {
+        for (const [key, eventName] of Object.entries(this.filters)) {
             PubSub.subscribe(eventName, () => this.setActiveButton(eventName));
         }
 
@@ -52,18 +71,14 @@ export class FilterBar extends HTMLElement {
         });
     }
 
-    connectedCallback() {
-        this.sub();
-        activeView = this.getAttribute("filterGroup"); // Ex: SEARCH, filterGroup="SEARCH"
-    }
 
-    disconnectedCallback() { }
 
-    onClock = (event) => {
+
+    onClick = (event) => {
         const button = event.target.closest("button[data-event]");
         if (!button) return;
 
-        console.log("TRYCKT FILTER: " + this.dataset.event);
+        console.log("TRYCKT FILTER: " + button.dataset.event);
 
         this.pubevent(button.dataset.event); // filter::x::x // filter::home::upcoming
     }

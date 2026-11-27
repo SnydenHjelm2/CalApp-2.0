@@ -29,7 +29,9 @@ export class AppRoot extends HTMLElement {
             <link rel="stylesheet" href="views/app/app.css">
 
                 <top-bar></top-bar>
-                <main id="content"></main>
+                <main id="content">
+                    <filter-bar filterGroup="HOME"></filter-bar>
+                </main>
                 <bottom-nav></bottom-nav>
         `;
 
@@ -61,8 +63,8 @@ export class AppRoot extends HTMLElement {
         PubSub.publish(eventName, data, true); // VISA HOME!
     }
 
-    
-    renderContentView(viewComponentTag) { 
+
+    renderContentView(viewComponentTag) {
         if (viewComponentTag == this.currentViewComponentTag) return;
 
         this.currentViewComponentTag = viewComponentTag;

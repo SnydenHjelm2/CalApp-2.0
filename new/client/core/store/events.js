@@ -44,5 +44,42 @@ export const EVENTS = {
             FAILED: "login::failed",
             PENDING: "login::pending"
         }
+    },
+    FILTER: {       // Används för <filter-bar>
+        HOME: {
+            UPCOMING: "filter::home::upcoming",
+            INVITED: "filter::home::invited",
+            HOSTING: "filter::home::hosting",
+        },
+        CALS: {
+            ALL: "filter::cals::all",
+            PRIVATE: "filter::cals::private",
+            PUBLIC: "filter::cals::public"
+        },
+        SEARCH: {
+            EVENT: "filter::search::event",
+            CAL: "filter::search::cal",
+            USER: "filter::search::user",
+        },
+        CHAT: {
+            ALL: "filter::chat::all",
+            DM: "filter::chat::dm",
+            CAL: "filter::chat::cal"
+        },
+        PEOPLE: {
+            FRIENDS: "filter::people::friends",
+            BLOCKED: "filter::people::blocked",
+            REQUEST: "filter::people::request"
+        }
+
+
+
+
+
+
+
+
+
+
     }
 }

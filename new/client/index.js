@@ -10,3 +10,4 @@ import { PubSub } from "./core/store/pubsub.js";
 import { AppRoot } from "./views/app/ApptRoot.js";
 import { BottomNav } from "./views/app/Nav/BottomNav.js";
 import { TopBar } from "./views/app/Top/TopBar.js";
+import { LoginRegister } from "./views/login-register/login-register.js";

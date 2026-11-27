@@ -1,0 +1,14 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    padding: 20px;
+    gap: 10px;
+}
+
+.switch {
+    text-decoration: underline;
+}

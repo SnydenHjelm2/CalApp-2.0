@@ -44,5 +44,13 @@ export const EVENTS = {
             FAILED: "login::failed",
             PENDING: "login::pending"
         }
+    },
+    COMPONENT: {
+        LOGIN_REGISTER: {
+            NAVIGATE: {
+                LOGIN: "component::login-register::navigate::login",
+                REGISTER: "component::login-register::navigate::register",
+            }
+        }
     }
 }

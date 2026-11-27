@@ -29,7 +29,7 @@ export const apiRequest = async (endpoint, method = "GET", body = null) => {
 
         return obj;
     } catch (e) {
-        PubSub.publish(EVENTS.API.REQUEST.NETWORKERROR, e);
+        PubSub.publish(EVENTS.API.REQUEST.NETWORK_ERROR, e);
         return e.message;
     }
 }

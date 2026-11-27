@@ -22,8 +22,11 @@ export class LoginRegister extends HTMLElement {
             this.shadowRoot.querySelector(".status").textContent = "Something went wrong: " + data.message;
         });
         PubSub.subscribe(EVENTS.API.RESPONSE.RECEIVED.SUCCESS, (data) => {
-            this.shadowRoot.querySelector(".status").textContent = "Registred!";
-            console.log(data);
+            if (data.method === "GET") {
+                //handle log-in success
+            } else if (data.method === "POST") {
+                //handle register success
+            }
         });
         PubSub.subscribe(EVENTS.API.RESPONSE.RECEIVED.FAILED, (data) => {
             this.shadowRoot.querySelector(".status").textContent = "Error: " + data.body.error;
@@ -88,10 +91,7 @@ export class LoginRegister extends HTMLElement {
                 let email = this.shadowRoot.querySelector("#lr-email").value;
                 let pwd = this.shadowRoot.querySelector("#lr-password").value;
 
-                await apiRequest("users", "POST", {
-                    name: name,
-                    pwd: pwd
-                });
+                await apiRequest(`users?email=${email}&pwd=${pwd}`, "GET");
             });
         } 
     }

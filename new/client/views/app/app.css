@@ -1,0 +1,26 @@
+:host {
+    position: relative;
+    display: grid;
+  
+    grid-template-rows: 7% 1fr; 
+    height: 100dvh;
+    overflow: hidden;
+    background: var(--background-color);
+}
+
+/* top-bar fyller sin rad. Appen äger storleken, komponenten äger utseendet. */
+
+#content {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-bottom: 84px;
+}
+
+bottom-nav {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    height: 60px;
+    z-index: 9999;
+}

@@ -24,7 +24,10 @@
                 return;
             }
             if($method === "POST") {
-                if(isset($input["name"]) && isset($input["email"]) && isset($input["pwd"])) {
+                $name = $input["name"] ?? null;
+                $pwd = $input["pwd"] ?? null;
+                $email = $input["email"] ?? null;
+                if($name && $pwd && $email) {
                     $result = UsersService::createNewUser($input); //new user
                     if(isset($result["error"])) {
                         http_response_code(409);

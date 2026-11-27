@@ -15,8 +15,49 @@ export class LoginRegister extends HTMLElement {
     sub() {
         PubSub.subscribe(EVENTS.COMPONENT.LOGIN_REGISTER.NAVIGATE.LOGIN, (data) => {this.render(data)});
         PubSub.subscribe(EVENTS.COMPONENT.LOGIN_REGISTER.NAVIGATE.REGISTER, (data) => {this.render(data)});
+        PubSub.subscribe(EVENTS.API.RESPONSE.RECEIVED.SUCCESS, (data) => {
+            if (data.action === "register") {
+                PubSub.publish(EVENTS.AUTH.REGISTER.SUCCESS, data);
+            } else if (data.action === "login") {
+                //set store / get user info here?
+                PubSub.publish(EVENTS.AUTH.LOGIN.SUCCESS, data);
+                //or sub on this event and do it there?
+            }
+        });
+        PubSub.subscribe(EVENTS.API.RESPONSE.RECEIVED.FAILED, (data) => {
+            if (data.action === "register") {
+                PubSub.publish(EVENTS.AUTH.REGISTER.FAILED, data);
+            } else if (data.action === "login") {
+                PubSub.publish(EVENTS.AUTH.LOGIN.FAILED, data);
+            }
+        });
         PubSub.subscribe(EVENTS.AUTH.REGISTER.START, async (data) => {
-            
+            PubSub.publish(EVENTS.AUTH.REGISTER.PENDING);
+            await apiRequest("register", "users", "POST", data);
+        });
+        PubSub.subscribe(EVENTS.AUTH.REGISTER.PENDING, () => {
+            this.shadowRoot.querySelector(".lr-status").textContent = "Please wait...";
+        });
+        PubSub.subscribe(EVENTS.AUTH.REGISTER.SUCCESS, (data) => {
+            this.shadowRoot.querySelector(".lr-status").textContent = "Register successfull!";
+            console.log(data);
+            //möjlig setTimeout som re-directar till login?
+        });
+        PubSub.subscribe(EVENTS.AUTH.REGISTER.FAILED, (data) => {
+            this.shadowRoot.querySelector(".lr-status").textContent = `Error: ${data.body.error}`;
+            console.log(data);
+        });
+        PubSub.subscribe(EVENTS.AUTH.LOGIN.START, async (data) => {
+            PubSub.publish(EVENTS.AUTH.LOGIN.PENDING);
+            await apiRequest("login", `users?email=${data.email}&pwd=${data.pwd}`);
+        });
+        PubSub.subscribe(EVENTS.AUTH.LOGIN.SUCCESS, (data) => {
+            this.shadowRoot.querySelector(".lr-status").textContent = "Success!";
+            console.log(data);
+        });
+        PubSub.subscribe(EVENTS.AUTH.LOGIN.FAILED, (data) => {
+            this.shadowRoot.querySelector(".lr-status").textContent = `Error: ${data.body.error}`;
+            console.log(data);
         });
     }
 
@@ -50,7 +91,7 @@ export class LoginRegister extends HTMLElement {
             this.shadowRoot.querySelector(".lr-switch").addEventListener("click", () => {
                 PubSub.publish(EVENTS.COMPONENT.LOGIN_REGISTER.NAVIGATE.LOGIN, "login");
             });
-            this.shadowRoot.querySelector("#lr-register").addEventListener("click", async () => {
+            this.shadowRoot.querySelector("#lr-register").addEventListener("click", () => {
                 let name = this.shadowRoot.querySelector("#lr-name").value;
                 let email = this.shadowRoot.querySelector("#lr-email").value;
                 let pwd = this.shadowRoot.querySelector("#lr-password").value;
@@ -73,11 +114,14 @@ export class LoginRegister extends HTMLElement {
             this.shadowRoot.querySelector(".lr-switch").addEventListener("click", () => {
                 PubSub.publish(EVENTS.COMPONENT.LOGIN_REGISTER.NAVIGATE.REGISTER, "register");
             });
-            this.shadowRoot.querySelector("#lr-login").addEventListener("click", async () => {
+            this.shadowRoot.querySelector("#lr-login").addEventListener("click", () => {
                 let email = this.shadowRoot.querySelector("#lr-email").value;
                 let pwd = this.shadowRoot.querySelector("#lr-password").value;
 
-                await apiRequest(`users?email=${email}&pwd=${pwd}`, "GET");
+                PubSub.publish(EVENTS.AUTH.LOGIN.START, {
+                    email: email,
+                    pwd: pwd
+                });
             });
         } 
     }

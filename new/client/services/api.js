@@ -1,7 +1,7 @@
 import { PubSub } from "../core/store/pubsub.js";
 import { EVENTS } from "../core/store/events.js";
 
-export const apiRequest = async (endpoint, method = "GET", body = null) => {
+export const apiRequest = async (action, endpoint, method = "GET", body = null) => {
     let options = {
         headers: {"Content-Type": "application/json"},
         method: method.toUpperCase()
@@ -10,12 +10,16 @@ export const apiRequest = async (endpoint, method = "GET", body = null) => {
 
     try {
         let req = new Request(`http://localhost:8000/${endpoint}`, options);
-        PubSub.publish(EVENTS.API.REQUEST.SENT, req);
+        PubSub.publish(EVENTS.API.REQUEST.SENT, {
+            req: req,
+            action: action
+        });
         let resp = await fetch(req);
 
         let reso = await resp.json();
 
         let obj = {
+            action: action,
             endpoint: endpoint,
             method: method.toUpperCase(),
             status: resp.status,
@@ -31,7 +35,10 @@ export const apiRequest = async (endpoint, method = "GET", body = null) => {
 
         return obj;
     } catch (e) {
-        PubSub.publish(EVENTS.API.REQUEST.NETWORK_ERROR, e);
+        PubSub.publish(EVENTS.API.REQUEST.NETWORK_ERROR, {
+            error: e,
+            action: action
+        });
         return e.message;
     }
 }

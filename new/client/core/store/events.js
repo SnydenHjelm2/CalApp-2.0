@@ -28,7 +28,7 @@ export const EVENTS = {
         OPEN: {
             EVENT: "popup::open::event",
             NEW_EVENT: "popup::open::newevent",
-            EDIT_EVENT: "popup::open::editevet",
+            EDIT_EVENT: "popup::open::editevent",
             CAL: "popup::open::cal"
         },
         CLOSE: {

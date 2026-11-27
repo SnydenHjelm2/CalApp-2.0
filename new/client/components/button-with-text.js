@@ -21,11 +21,11 @@ export class ButtonWithText extends HTMLElement{
     async create(resource, payload){
         try {
             let data = await apiRequest(resource, "POST", payload);
-            PubSub.publish(EVENTS.API.RESPONSE.RECEIVED.SUCCESS, { action: "create", resource, data });
+            PubSub.publish(EVENTS.API.RESPONSE.RECEIVED.SUCCESS, { action: "create", resource, data }, true);
 
         }
         catch(error){
-            PubSub.publish(EVENTS.API.RESPONSE.RECEIVED.FAILED, { action: "create", resource, error: error.message })
+            PubSub.publish(EVENTS.API.RESPONSE.RECEIVED.FAILED, { action: "create", resource, error: error.message }, true)
         }
         
     }
@@ -54,18 +54,15 @@ export class ButtonWithText extends HTMLElement{
 
             if(action === "close"){
                 //context = "NEW_EVENT" || "EVENT" || "EDIT EVENT" || CAL 
-                let context = this.getAttribute("context");
                 let event = this.dataset.event;
                 console.log(event);
 
-                PubSub.publish(event)
+                PubSub.publish(event,{}, true)
             }
 
             if (action === "open"){
-                //context bör se ut exakt som i events.js
-                //context = "NEW_EVENT" || "EVENT" || "EDIT_EVENT" || CAL 
-                let context = this.getAttribute("context");
-                PubSub.publish(data);
+                let event = this.dataset.event;
+                PubSub.publish(event, {}, true);
             }
         });
     }

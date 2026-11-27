@@ -4,6 +4,7 @@
 
 ```js
 //Import PubSub and components needed
+//Pathmays may NOT be accurate to all directories. Check pathways when creating components / views
 import { component } from "../component/component.js";
 import { PubSub } from "../store/pubsub.js";
 import { store } from "../store/store.js";
@@ -22,7 +23,6 @@ class Component extends HTMLElement {
 
         //Use a separate CSS file, link it in the shadowRoots innerHTML
         this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="../vars.css">
             <link rel="stylesheet" href="/style.css">
         `;
 
